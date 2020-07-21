@@ -1,7 +1,4 @@
-<p align="center">
-Hi there 👋
+<h1 align="center">Hi there 👋</h1>
 
-🔭 I’m currently working on ...
-🌱 I’m currently learning ...
-
-</p>
+<p align="center">🔭 I’m currently working on ...</p>
+<p align="center">🌱 I’m currently learning ...</p>
