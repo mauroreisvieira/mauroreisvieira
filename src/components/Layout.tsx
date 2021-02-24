@@ -1,35 +1,41 @@
-import React, { ReactNode } from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 
-type Props = {
-  children?: ReactNode;
-  title?: string;
+export type Meta = {
+  title: string;
+  description: string;
+  cardImage?: string;
 };
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+interface LayoutProps {
+  meta: Meta;
+}
+
+const Layout: React.FC<LayoutProps> = ({
+  meta,
+  children,
+}: LayoutProps & React.PropsWithChildren<LayoutProps>) => (
+  <>
     <Head>
-      <title>{title}</title>
+      <title>{meta.title}</title>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="robots" content="follow, index" />
+      <link href="/favicon.ico" rel="shortcut icon" />
+      <meta content={meta.description} name="description" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:image" content={meta.cardImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@vercel" />
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+      <meta name="twitter:image" content={meta.cardImage} />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </nav>
-    </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
+  </>
 );
 
 export default Layout;
