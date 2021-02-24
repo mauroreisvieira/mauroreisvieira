@@ -17,24 +17,13 @@ const Page = () => {
             <Layout meta={meta}>
                 <div className="lg:grid lg:grid-cols-2 gap-12">
                     <div>
-                        <h1 className="tracking-tight font-black text-8xl dark:text-white mb-12">
+                        <h1 className="tracking-tight font-black text-6xl dark:text-white mb-12">
                             Hey folks!
                         </h1>
                         <div className="text-2xl">
-                            <p className="mb-6">
-                                I am{' '}
-                                <a href="http://www.twitter.com/mauroreisivieira">
-                                    @mauroreisivieira
-                                </a>
-                                , an Front End Developer with focus on React.
-                            </p>
-                            <p>
-                                I believe in collaboration over competition, you
-                                can check my open-source projects on{' '}
-                                <a href="https://www.github.com/mauroreisivieira">
-                                    GitHub
-                                </a>
-                                .
+                            <p className="mb-6 dark:text-white">
+                                I am Mauro Reis Vieira, a Front End Developer
+                                with focus on React.
                             </p>
                         </div>
                     </div>
