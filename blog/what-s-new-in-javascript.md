@@ -1,11 +1,11 @@
 ---
-title: 'Prism with Next.js'
+title: 'New in Javascript?'
 description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
 ---
 
 Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.
 
-### Private Fields
+## Private Fields
 
 ```js
 class Counter {
@@ -32,7 +32,7 @@ From the **Counter** class, the `#counter` value is private.\
 If we try to access the `#counter`, then syntax error will be shown.
 
 
-### Rest/Spread Properties
+## Rest/Spread Properties
 
 The rest operator `...` copies the remaining property keys that were not mentioned. Let's look at an example:
 
@@ -43,7 +43,7 @@ console.log(a);   // prints 1
 console.log(n);   // prints {b: 2, c: 3, d: 4}
 ````
 
-### Asynchronous Iteration
+## Asynchronous Iteration
 
 Now we can use `await` on our loops declarations.
 
@@ -53,7 +53,7 @@ for await (const line of readLines(filePath)) {
 }
 ```
 
-### Regular Expression
+## Regular Expression
 
 JavaScript regular expressions can return a match object — an array-like value containing matched strings.
 For example, to parse a date in YYYY-MM-DD format:
@@ -67,7 +67,7 @@ const
   day    = match[3]; // 21
 ````
 
-### Array Flat
+## Array Flat
 
 ```js
 const numbers = [1, 2, [3, 4, [5, 6]]];
@@ -90,12 +90,14 @@ By default, it will convert 1 level deep.
 
 **You can use:**
 
-`const array = [ 1, [2 , [3 , 4 , [5 , 6 ] ]]]`\
-`array.flat(Infinity);`
+```js
+const array = [ 1, [2 , [3 , 4 , [5 , 6 ] ]]]
+array.flat(Infinity);
+```
 
 The output will be **1, 2, 3, 4, 5, 6** if we use Infinity it will recursively convert to a flat list.
 
-### Set
+## Set
 
 The Set object lets you store unique values of any type, whether primitive values or object references.\
 Set objects are collections of values. You can iterate through the elements of a set in insertion order.

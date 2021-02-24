@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import Layout from '../components/Layout';
+import Header from '../components/Header';
+import Nav from '../components/Nav';
 
 const About = () => {
   const meta = {
@@ -9,7 +10,9 @@ const About = () => {
 
   return (
     <Layout meta={meta}>
-      <Link href="/">Home</Link>
+      <Header>
+          <Nav />
+      </Header>
       <h2>Hi.</h2>
       <p>
         I'm Mauro Reis Vieira, a curious developer with a focus on Front End

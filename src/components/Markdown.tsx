@@ -10,7 +10,7 @@ const Markdown: React.FC<MarkdownProps> = ({
   content,
 }: MarkdownProps) => (
   <article
-    className="prose lg:prose-xl px-8 m-auto my-4 sm:my-16"
+    className="prose prose-xl m-auto"
     // eslint-disable-next-line react/no-danger
     dangerouslySetInnerHTML={content}
   />

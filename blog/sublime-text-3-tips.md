@@ -1,5 +1,5 @@
 ---
-title: 'Prism with Next.js'
+title: 'Sublime Text 3 Tips'
 description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
 ---
 
