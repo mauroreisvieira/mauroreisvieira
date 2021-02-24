@@ -1,3 +1,8 @@
+---
+title: 'Prism with Next.js'
+description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+---
+
 Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.
 
 ### Private Fields

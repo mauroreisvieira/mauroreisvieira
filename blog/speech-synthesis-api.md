@@ -1,3 +1,8 @@
+---
+title: 'Prism with Next.js'
+description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+---
+
 The `Speech Synthesis API` is an awesome API, great to experiment new kind of interfaces and let the browser talk to you.
 
 ### API
@@ -19,12 +24,4 @@ You can use any language you want, by setting the utterance `lang` property:
     const utterance = new SpeechSynthesisUtterance('Olá');
     utterance.lang = 'pt-BR';
     speechSynthesis.speak(utterance);
-```
-
-### Example
-
-For this example we go use the Hello Week calendar.
-
-```js
-
 ```

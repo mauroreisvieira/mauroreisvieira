@@ -2,8 +2,8 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/prism',
+        source: '/about',
+        destination: '/',
         permanent: true,
       },
     ];

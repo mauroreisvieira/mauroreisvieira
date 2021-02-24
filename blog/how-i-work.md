@@ -1,3 +1,8 @@
+---
+title: 'Prism with Next.js'
+description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+---
+
 I’ve seen a few people share their work setups / processes lately, so I thought I would do the same.
 
 ### Editor

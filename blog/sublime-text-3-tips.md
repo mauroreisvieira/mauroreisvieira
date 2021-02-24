@@ -1,3 +1,8 @@
+---
+title: 'Prism with Next.js'
+description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+---
+
 I've been using Sublime Text 3 for probably five years now and in that time I've discovered tons of useful tricks.
 
 I figured I should start writing them down for anyone who might be interested.

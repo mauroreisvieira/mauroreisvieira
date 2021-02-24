@@ -34,7 +34,9 @@ const Layout: React.FC<LayoutProps> = ({
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:image" content={meta.cardImage} />
     </Head>
-    {children}
+    <div className="mx-auto md:w-10/12 w-10/12">
+      <div className="mx-auto w-full">{children}</div>
+    </div>
   </>
 );
 
