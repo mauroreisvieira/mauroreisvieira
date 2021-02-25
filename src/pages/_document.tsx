@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="bg-white dark:bg-gray-800 p-8">
+        <body className="leading-relaxed bg-white dark:bg-black p-8">
           <Main />
           <NextScript />
         </body>

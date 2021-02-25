@@ -2,10 +2,10 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Nav from '../components/Nav';
 
-const About = () => {
+const Uses = () => {
     const meta = {
-        title: 'About | Next.js + TypeScript Example',
-        description: 'About | Next.js + TypeScript Example',
+        title: 'Uses | Next.js + TypeScript Example',
+        description: 'Uses | Next.js + TypeScript Example',
     };
 
     const experienceYears =
@@ -18,7 +18,7 @@ const About = () => {
             </Header>
             <Layout meta={meta}>
                 <h1 className="tracking-tight font-black text-7xl dark:text-white mb-12">
-                    About Me...
+                    Cool things ^^
                 </h1>
                 <div className="text-2xl dark:text-white">
                     <p className="mb-4">
@@ -135,4 +135,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Uses;

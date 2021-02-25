@@ -37,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({
             <meta name="twitter:description" content={meta.description} />
             <meta name="twitter:image" content={meta.cardImage} />
         </Head>
-        <div className="max-w-7xl mx-auto">{children}</div>
+        <div className="max-w-7xl mx-auto mt-24">{children}</div>
     </>
 );
 
