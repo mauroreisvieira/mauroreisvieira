@@ -4,6 +4,24 @@ interface Uses {
     description: string;
 }
 
+export const SETUP: Uses[] = [
+    {
+        name: '15" MacBook Pro (Retina, 15-inch, Mid 2015)',
+        link: 'https://support.apple.com/kb/sp719?locale=pt_PT',
+        description: '2,2 GHz Quad-Core Intel Core i7, 16 GB 1600 MHz DDR3, Intel Iris Pro 1536 MB'
+    },
+    {
+        name: 'Magic Mouse 2',
+        link: 'https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2-silver',
+        description: 'I love the gestures and precision you get with a real mouse.'
+    },
+    {
+        name: 'Magic Trackpad 2',
+        link: 'https://www.apple.com/shop/product/MJ2R2LL/A/magic-trackpad-2-silver',
+        description: 'Recently I bought to tested and I love it.'
+    },
+];
+
 export const DEVELOPMENT: Uses[] = [
     {
         name: 'Sublime Text 3',
@@ -45,5 +63,22 @@ export const DEVELOPMENT: Uses[] = [
         link: 'https://github.com',
         description: 'I switched from Bitbucket to GitHub as soon as they made the possibility of having free repositories available.'
     },
+];
 
+export const DESIGN: Uses[] = [
+    {
+        name: 'Figma',
+        link: 'https://www.figma.com/',
+        description: 'Cross-platform fast and powerful, amazing collaboration tool.'
+    },
+    {
+        name: 'SVGOMG',
+        link: 'https://jakearchibald.github.io/svgomg/',
+        description: 'Awesome for quickly optimizing SVGs.'
+    },
+    {
+        name: 'ImageOptim',
+        link: 'https://imageoptim.com/mac',
+        description: 'Great for optimizing raster images like PNG, JPEG without losing quality.'
+    },
 ];

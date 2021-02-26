@@ -4,8 +4,8 @@ import Nav from '../components/Nav';
 import Header from '../components/Header';
 const Page = () => {
     const meta = {
-        title: 'Home | Next.js + TypeScript Example',
-        description: 'Home | Next.js + TypeScript Example',
+        title: 'Mauro Reis Vieira',
+        description: 'Mauro Reis Vieira',
     };
     return (
         <>
@@ -14,8 +14,8 @@ const Page = () => {
             </Header>
             <Layout meta={meta}>
                 <div>
-                    <h1 className="font-black text-7xl dark:text-white mb-12">
-                        hey folks
+                    <h1 className="font-black text-8xl dark:text-white mb-12">
+                        hey folks!
                     </h1>
                     <div>
                         <p className="text-3xl dark:text-white mb-8">

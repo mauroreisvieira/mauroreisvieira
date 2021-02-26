@@ -11,7 +11,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="leading-relaxed bg-white dark:bg-black p-6">
+                <body className="leading-relaxed font-light bg-white dark:bg-black pt-8 px-8 pb-24">
                     <Main />
                     <NextScript />
                 </body>

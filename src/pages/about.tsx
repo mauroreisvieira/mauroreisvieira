@@ -4,8 +4,8 @@ import Nav from '../components/Nav';
 
 const About = () => {
     const meta = {
-        title: 'About | Next.js + TypeScript Example',
-        description: 'About | Next.js + TypeScript Example',
+        title: 'About | Mauro Reis Vieira',
+        description: 'About | Mauro Reis Vieira',
     };
 
     const experienceYears =
@@ -17,7 +17,7 @@ const About = () => {
                 <Nav />
             </Header>
             <Layout meta={meta}>
-                <h1 className="font-black text-7xl dark:text-white mb-12">
+                <h1 className="font-black text-8xl dark:text-white mb-12">
                     about me
                 </h1>
                 <div className="text-2xl dark:text-white">
@@ -37,9 +37,9 @@ const About = () => {
                         experience with others.
                     </p>
                     <div className="mt-16">
-                        <h3 className="font-bold text-5xl dark:text-white mb-8">
-                            Experience
-                        </h3>
+                        <h2 className="font-bold text-5xl dark:text-white mb-5">
+                            experience
+                        </h2>
                         <p className="mb-4">
                             <strong>Front End Developer</strong> −{' '}
                             <a
