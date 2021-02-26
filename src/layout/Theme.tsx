@@ -6,14 +6,14 @@ export type Meta = {
     cardImage?: string;
 };
 
-interface LayoutProps {
+interface ThemeProps {
     meta: Meta;
 }
 
-const Layout: React.FC<LayoutProps> = ({
+const Theme: React.FC<ThemeProps> = ({
     meta,
     children,
-}: LayoutProps & React.PropsWithChildren<LayoutProps>) => (
+}: ThemeProps & React.PropsWithChildren<ThemeProps>) => (
     <>
         <Head>
             <title>{meta.title}</title>
@@ -41,4 +41,4 @@ const Layout: React.FC<LayoutProps> = ({
     </>
 );
 
-export default Layout;
+export default Theme;

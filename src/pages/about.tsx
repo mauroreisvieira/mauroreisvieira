@@ -1,6 +1,5 @@
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Nav from '../components/Nav';
+import { Anchor } from '../components';
+import { Header, Theme, Nav } from '../layout';
 
 const About = () => {
     const meta = {
@@ -16,7 +15,7 @@ const About = () => {
             <Header>
                 <Nav />
             </Header>
-            <Layout meta={meta}>
+            <Theme meta={meta}>
                 <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                     about me
                 </h1>
@@ -42,15 +41,13 @@ const About = () => {
                         </h2>
                         <p className="mb-4">
                             <strong>Front End Developer</strong> −{' '}
-                            <a
-                                className="text-indigo-500 hover:text-indigo-600"
+                            <Anchor
                                 href="https://www.namecheap.com/"
-                                title="Namecheap"
-                                target="_blank"
                                 rel="noreferrer"
-                            >
+                                title="Namecheap"
+                                target="_blank">
                                 Namecheap
-                            </a>
+                            </Anchor>
                             <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
                                 <svg
                                     className="w-4 h-4 mr-2"
@@ -74,15 +71,13 @@ const About = () => {
                         </p>
                         <p className="mb-4">
                             <strong>Full Stack Developer</strong> −{' '}
-                            <a
-                                className="text-indigo-500 hover:text-indigo-600"
+                            <Anchor
                                 href="http://www.hi-interactive.pt/"
-                                title="Hi INTERACTIVE"
-                                target="_blank"
                                 rel="noreferrer"
-                            >
+                                title="Hi INTERACTIVE"
+                                target="_blank">
                                 Hi INTERACTIVE
-                            </a>
+                            </Anchor>
                             <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
                                 <svg
                                     className="w-4 h-4 mr-2"
@@ -102,15 +97,13 @@ const About = () => {
                         </p>
                         <p className="mb-4">
                             <strong>Web Developer</strong> −{' '}
-                            <a
-                                className="text-indigo-500 hover:text-indigo-600"
+                            <Anchor
                                 href="https://www.wayacross.pt/"
-                                title="WayAcross"
-                                target="_blank"
                                 rel="noreferrer"
-                            >
+                                title="WayAcross"
+                                target="_blank">
                                 WayAcross
-                            </a>
+                            </Anchor>
                             <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
                                 <svg
                                     className="w-4 h-4 mr-2"
@@ -130,7 +123,7 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-            </Layout>
+            </Theme>
         </>
     );
 };

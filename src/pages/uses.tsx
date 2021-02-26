@@ -1,8 +1,7 @@
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Nav from '../components/Nav';
+import { Anchor } from '../components';
+import { Header, Nav, Theme } from '../layout';
 
-import { DEVELOPMENT, SETUP, DESIGN } from '../api/uses';
+import { DEVELOPMENT, SETUP, DESIGN } from '../api';
 
 const Uses = () => {
     const meta = {
@@ -15,7 +14,7 @@ const Uses = () => {
             <Header>
                 <Nav />
             </Header>
-            <Layout meta={meta}>
+            <Theme meta={meta}>
                 <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                     cool things
                 </h1>
@@ -30,13 +29,15 @@ const Uses = () => {
                         </h2>
                         {SETUP.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
-                                <a
-                                    className="font-medium text-indigo-500 hover:text-indigo-600 cursor-pointer"
+                                <Anchor
                                     href={item.link}
                                     rel="noreferrer"
+                                    className="font-medium"
+                                    title={item.name}
+                                    target="_blank"
                                 >
                                     {item.name}
-                                </a>
+                                </Anchor>
                                 <span className="flex">{item.description}</span>
                             </p>
                         ))}
@@ -48,13 +49,15 @@ const Uses = () => {
                         </h2>
                         {DEVELOPMENT.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
-                                <a
-                                    className="font-medium text-indigo-500 hover:text-indigo-600 cursor-pointer"
+                                <Anchor
                                     href={item.link}
                                     rel="noreferrer"
+                                    className="font-medium"
+                                    title={item.name}
+                                    target="_blank"
                                 >
                                     {item.name}
-                                </a>
+                                </Anchor>
                                 <span className="flex">{item.description}</span>
                             </p>
                         ))}
@@ -66,19 +69,21 @@ const Uses = () => {
                         </h2>
                         {DESIGN.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
-                                <a
-                                    className="font-medium text-indigo-500 hover:text-indigo-600 cursor-pointer"
+                                <Anchor
                                     href={item.link}
                                     rel="noreferrer"
+                                    className="font-medium"
+                                    title={item.name}
+                                    target="_blank"
                                 >
                                     {item.name}
-                                </a>
+                                </Anchor>
                                 <span className="flex">{item.description}</span>
                             </p>
                         ))}
                     </div>
                 </div>
-            </Layout>
+            </Theme>
         </>
     );
 };

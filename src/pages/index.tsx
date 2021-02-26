@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Layout from '../components/Layout';
-import Nav from '../components/Nav';
-import Header from '../components/Header';
+import { Anchor } from '../components';
+import { Header, Nav, Theme } from '../layout';
+
 const Page = () => {
     const meta = {
         title: 'Mauro Reis Vieira',
@@ -12,7 +12,7 @@ const Page = () => {
             <Header>
                 <Nav />
             </Header>
-            <Layout meta={meta}>
+            <Theme meta={meta}>
                 <div>
                     <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                         hey folks!
@@ -24,21 +24,21 @@ const Page = () => {
                         <p className="text-3xl dark:text-white">
                             You can read more{' '}
                             <Link href="/about">
-                                <span className="text-indigo-500 hover:text-indigo-600 cursor-pointer">
+                                <Anchor>
                                     about me
-                                </span>
+                                </Anchor>
                             </Link>{' '}
                             or you can check what{' '}
                             <Link href="/uses">
-                                <span className="text-indigo-500 hover:text-indigo-600 cursor-pointer">
+                                <Anchor>
                                     cool things
-                                </span>
+                                </Anchor>
                             </Link>{' '}
                             I use on my normal workday.
                         </p>
                     </div>
                 </div>
-            </Layout>
+            </Theme>
         </>
     );
 };

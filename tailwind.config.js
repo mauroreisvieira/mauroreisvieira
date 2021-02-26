@@ -19,6 +19,11 @@ module.exports = {
             },
             colors: {
                 gray: colors.trueGray,
+                brand: {
+                    light: '#7e57c2',
+                    DEFAULT: '#673ab7',
+                    dark: '#5e35b1',
+                }
             },
             typography: (theme) => ({
                 light: {

@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
 import classname from 'classnames';
 
-type NativeButton = React.ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-interface ButtonProps extends NativeButton {
+interface ButtonProps extends ButtonType {
     skin?: 'gray' | 'indigo';
     className?: string;
     children: React.ReactNode;

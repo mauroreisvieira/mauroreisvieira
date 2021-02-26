@@ -1,9 +1,9 @@
-interface Blog {
+interface Post {
     title: string;
     date: Date;
 }
 
-export const BLOG: Blog[] = [
+export const POSTS: Post[] = [
     {
         title: 'How to add Prettier and ESLint to your Next.js app',
         date: new Date('10-10-2020'),
