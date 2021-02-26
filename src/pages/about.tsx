@@ -17,8 +17,8 @@ const About = () => {
                 <Nav />
             </Header>
             <Layout meta={meta}>
-                <h1 className="tracking-tight font-black text-7xl dark:text-white mb-12">
-                    About Me...
+                <h1 className="font-black text-7xl dark:text-white mb-12">
+                    about me
                 </h1>
                 <div className="text-2xl dark:text-white">
                     <p className="mb-4">
@@ -37,7 +37,7 @@ const About = () => {
                         experience with others.
                     </p>
                     <div className="mt-16">
-                        <h3 className="tracking-tight font-bold text-5xl dark:text-white mb-8">
+                        <h3 className="font-bold text-5xl dark:text-white mb-8">
                             Experience
                         </h3>
                         <p className="mb-4">
@@ -69,7 +69,7 @@ const About = () => {
                                 {new Date().toLocaleString('default', {
                                     month: 'long',
                                 })}{' '}
-                                {new Date().getFullYear()} (current)
+                                {new Date().getFullYear()} (present)
                             </span>
                         </p>
                         <p className="mb-4">

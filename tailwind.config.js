@@ -5,6 +5,18 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
+            keyframes: {
+                cursor: {
+                    '0%, 100%': { opacity: 1 },
+                    '50%': { opacity: 0 },
+                },
+            },
+            animation: {
+                cursor: 'cursor 1s ease-in-out infinite'
+            },
+            fontFamily: {
+                mono: ['JetBrains Mono', 'monospace'],
+            },
             colors: {
                 gray: colors.trueGray,
             },

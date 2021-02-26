@@ -4,12 +4,12 @@
 
 @layer components {
     .prose code {
-        @apply text-indigo-500;
+        @apply text-indigo-500 font-mono;
     }
 
     .prose code[class*='language-'],
     .prose pre[class*='language-'] {
-        @apply text-gray-700 bg-gray-50 rounded-md;
+        @apply text-gray-700 bg-gray-50 rounded-md font-mono;
     }
 
     pre[class*='language-']::selection,
