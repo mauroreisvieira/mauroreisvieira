@@ -67,6 +67,11 @@ export const DEVELOPMENT: Uses[] = [
 
 export const DESIGN: Uses[] = [
     {
+        name: 'Affinity Designer',
+        link: 'https://affinity.serif.com/',
+        description: 'Fastest photo editing and graphic design.'
+    },
+    {
         name: 'Figma',
         link: 'https://www.figma.com/',
         description: 'Cross-platform fast and powerful, amazing collaboration tool.'

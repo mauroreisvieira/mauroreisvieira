@@ -17,7 +17,7 @@ const About = () => {
                 <Nav />
             </Header>
             <Layout meta={meta}>
-                <h1 className="font-black text-8xl dark:text-white mb-12">
+                <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                     about me
                 </h1>
                 <div className="text-2xl dark:text-white">
@@ -37,7 +37,7 @@ const About = () => {
                         experience with others.
                     </p>
                     <div className="mt-16">
-                        <h2 className="font-bold text-5xl dark:text-white mb-5">
+                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
                             experience
                         </h2>
                         <p className="mb-4">

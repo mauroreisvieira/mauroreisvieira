@@ -14,7 +14,7 @@ const Page = () => {
             </Header>
             <Layout meta={meta}>
                 <div>
-                    <h1 className="font-black text-8xl dark:text-white mb-12">
+                    <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                         hey folks!
                     </h1>
                     <div>
