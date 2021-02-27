@@ -10,11 +10,11 @@ interface ButtonProps extends ButtonType {
     children: React.ReactNode;
 }
 
-const Button = forwardRef(
+export const Button = forwardRef(
     (
         { skin = 'gray', className, children, ...otherProps }: ButtonProps,
         ref: React.Ref<HTMLButtonElement & HTMLAnchorElement>
-    ) => {
+    ): React.ReactElement => {
         const { href } = otherProps;
         const TAG = href ? 'a' : 'button';
 
@@ -33,5 +33,3 @@ const Button = forwardRef(
         );
     }
 );
-
-export default Button;

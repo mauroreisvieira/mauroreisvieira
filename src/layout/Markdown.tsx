@@ -1,19 +1,23 @@
+import React, { forwardRef } from 'react';
+
 type DangerouslySetInnerHTML = {
-  __html: string;
-}
+    __html: string;
+};
 
 interface MarkdownProps {
-  content: DangerouslySetInnerHTML;
+    content: DangerouslySetInnerHTML;
 }
 
-const Markdown: React.FC<MarkdownProps> = ({
-  content,
-}: MarkdownProps) => (
-  <article
-    className="prose dark:prose-light mx-auto"
-    // eslint-disable-next-line react/no-danger
-    dangerouslySetInnerHTML={content}
-  />
+export const Markdown = forwardRef(
+    (
+        { content }: MarkdownProps,
+        ref: React.Ref<HTMLDivElement>
+    ): React.ReactElement => (
+        <div
+            ref={ref}
+            className="prose prose-xl dark:prose-light mx-auto"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={content}
+        />
+    )
 );
-
-export default Markdown;

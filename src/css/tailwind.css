@@ -4,7 +4,7 @@
 
 @layer components {
     .prose code {
-        @apply text-indigo-500 font-mono;
+        @apply text-brand font-mono;
     }
 
     .prose code[class*='language-'],

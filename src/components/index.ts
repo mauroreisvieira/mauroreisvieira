@@ -1,2 +1,3 @@
-export { default as Anchor } from './Anchor'
-export { default as Button } from './Button'
+export { Anchor } from './Anchor'
+export { Button } from './Button'
+export { Progress } from './Progress'

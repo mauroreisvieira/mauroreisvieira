@@ -6,14 +6,13 @@ type AnchorType = React.HTMLAttributes<HTMLSpanElement> &
 
 interface AnchorProps extends AnchorType {
     className?: string;
-    children: React.ReactNode;
 }
 
-const Anchor: React.FC<AnchorProps> = ({
+export const Anchor: React.FC<AnchorProps> = ({
     className,
     children,
     ...otherProps
-}: AnchorProps & React.PropsWithChildren<AnchorProps>) => {
+}: AnchorProps & React.PropsWithChildren<AnchorProps>): React.ReactElement => {
     const { href } = otherProps;
     const TAG = href ? 'a' : 'button';
 
@@ -29,5 +28,3 @@ const Anchor: React.FC<AnchorProps> = ({
         </TAG>
     );
 };
-
-export default Anchor;

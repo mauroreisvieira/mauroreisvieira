@@ -1,9 +1,11 @@
 ---
-title: 'New in Javascript?'
-description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+title: "What's new in Javascript?"
+description: "Example using Prism / Markdown with Next.js including switching syntax highlighting themes."
+author: "Mauro Reis Vieira"
+date: "2019-10-04"
 ---
 
-Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.
+Some of the new features are still proposal, so if you are playing with the code Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.
 
 ## Private Fields
 
@@ -31,17 +33,16 @@ If we try to access the `#counter`, then syntax error will be shown.
 From the **Counter** class, the `#counter` value is private.\
 If we try to access the `#counter`, then syntax error will be shown.
 
-
 ## Rest/Spread Properties
 
 The rest operator `...` copies the remaining property keys that were not mentioned. Let's look at an example:
 
 ```js
-const values = {a: 1, b: 2, c: 3, d: 4};
-const {a, ...n} = values;
-console.log(a);   // prints 1
-console.log(n);   // prints {b: 2, c: 3, d: 4}
-````
+const values = { a: 1, b: 2, c: 3, d: 4 };
+const { a, ...n } = values;
+console.log(a); // prints 1
+console.log(n); // prints {b: 2, c: 3, d: 4}
+```
 
 ## Asynchronous Iteration
 
@@ -49,7 +50,7 @@ Now we can use `await` on our loops declarations.
 
 ```js
 for await (const line of readLines(filePath)) {
-  console.log(line);
+    console.log(line);
 }
 ```
 
@@ -59,13 +60,12 @@ JavaScript regular expressions can return a match object — an array-like value
 For example, to parse a date in YYYY-MM-DD format:
 
 ```js
-const
-  reDate = /([0-9]{4})-([0-9]{2})-([0-9]{2})/,
-  match  = reDate.exec('2019-05-21'),
-  year   = match[1], // 2019
-  month  = match[2], // 05
-  day    = match[3]; // 21
-````
+const reDate = /([0-9]{4})-([0-9]{2})-([0-9]{2})/,
+    match = reDate.exec('2019-05-21'),
+    year = match[1], // 2019
+    month = match[2], // 05
+    day = match[3]; // 21
+```
 
 ## Array Flat
 
@@ -91,7 +91,7 @@ By default, it will convert 1 level deep.
 **You can use:**
 
 ```js
-const array = [ 1, [2 , [3 , 4 , [5 , 6 ] ]]]
+const array = [1, [2, [3, 4, [5, 6]]]];
 array.flat(Infinity);
 ```
 
@@ -119,5 +119,5 @@ mySet.has(1); // true
 mySet.size; // 5
 
 mySet.delete(5); // removes 5 from the set
-mySet.has(5);    // false, 5 has been removed
+mySet.has(5); // false, 5 has been removed
 ```

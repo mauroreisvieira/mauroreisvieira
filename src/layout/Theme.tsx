@@ -1,19 +1,22 @@
+import React from 'react';
 import Head from 'next/head';
 
-export type Meta = {
+type Meta = {
     title: string;
     description: string;
     cardImage?: string;
+    author?: string;
+    date?: Date;
 };
 
 interface ThemeProps {
     meta: Meta;
 }
 
-const Theme: React.FC<ThemeProps> = ({
+export const Theme: React.FC<ThemeProps> = ({
     meta,
     children,
-}: ThemeProps & React.PropsWithChildren<ThemeProps>) => (
+}: ThemeProps & React.PropsWithChildren<ThemeProps>): React.ReactElement => (
     <>
         <Head>
             <title>{meta.title}</title>
@@ -37,8 +40,6 @@ const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:description" content={meta.description} />
             <meta name="twitter:image" content={meta.cardImage} />
         </Head>
-        <div className="max-w-screen-lg mx-auto mt-12 lg:mt-24">{children}</div>
+        <div className="max-w-screen-lg mx-auto pt-4 px-4 pg:pt-8 lg:px-8 pb-24 mt-12 lg:mt-24">{children}</div>
     </>
 );
-
-export default Theme;

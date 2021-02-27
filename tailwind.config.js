@@ -18,11 +18,12 @@ module.exports = {
                 mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
+                black: '#16161d',
                 gray: colors.trueGray,
                 brand: {
-                    light: '#7e57c2',
-                    DEFAULT: '#673ab7',
-                    dark: '#5e35b1',
+                    light: '#f1427d',
+                    DEFAULT: '#e91e63',
+                    dark: '#da2160',
                 }
             },
             typography: (theme) => ({

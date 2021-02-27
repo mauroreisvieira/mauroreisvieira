@@ -1,4 +1,5 @@
-export { default as Theme } from './Theme'
-export { default as Nav } from './Nav'
-export { default as Header } from './Header'
-export { default as Markdown } from './Markdown'
+export { Theme } from './Theme';
+export { Nav } from './Nav';
+export { Header } from './Header';
+export { Markdown } from './Markdown';
+export { Social } from './Social';

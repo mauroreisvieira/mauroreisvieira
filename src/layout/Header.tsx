@@ -1,11 +1,13 @@
+import React from 'react';
+import classname from 'classnames';
+
 interface HeaderProps {
-    children: React.ReactNode;
+    className?: string;
 }
 
-const Header = ({ children }: HeaderProps) => (
-    <header className="flex mb-8">
-        {children}
-    </header>
+export const Header = ({
+    className,
+    children,
+}: HeaderProps & React.PropsWithChildren<HeaderProps>): React.ReactElement => (
+    <header className={classname('flex p-4', className)}>{children}</header>
 );
-
-export default Header;
