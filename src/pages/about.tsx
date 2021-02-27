@@ -36,9 +36,7 @@ const About = () => {
                         experience with others.
                     </p>
                     <div className="mt-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            experience
-                        </h2>
+                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-6">experience ⤵</h2>
                         <p className="mb-4">
                             <strong>Front End Developer</strong> −{' '}
                             <Anchor

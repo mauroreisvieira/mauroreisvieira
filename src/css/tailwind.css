@@ -9,7 +9,7 @@
 
     .prose code[class*='language-'],
     .prose pre[class*='language-'] {
-        @apply text-gray-700 bg-gray-50 rounded-md font-mono;
+        @apply text-gray-700 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 rounded-md font-mono;
     }
 
     pre[class*='language-']::selection,

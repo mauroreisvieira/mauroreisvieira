@@ -18,8 +18,9 @@ export const Doc: React.FC<DocProps> = ({
     const [width, setWidth] = useState<number>(0);
 
     const updateScrollProgress = useCallback((): void => {
-        if (!markdownRef.current) return;
-        const winTop = window.pageYOffset || document.documentElement.scrollTop;
+        const winTop = window.pageYOffset;
+        console.log(markdownRef.current);
+        console.log(markdownRef.current.scrollHeight);
         const targetBottom =
             markdownRef.current.offsetTop + markdownRef.current.scrollHeight;
         const windowBottom = winTop + window.outerHeight;

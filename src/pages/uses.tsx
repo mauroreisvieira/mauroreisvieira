@@ -25,7 +25,7 @@ const Uses = () => {
                     </p>
                     <div className="mb-16">
                         <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            setup
+                            setup ⤵
                         </h2>
                         {SETUP.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
@@ -45,7 +45,7 @@ const Uses = () => {
 
                     <div className="mb-16">
                         <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            development
+                            development ⤵
                         </h2>
                         {DEVELOPMENT.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
@@ -65,7 +65,7 @@ const Uses = () => {
 
                     <div className="mb-8">
                         <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            design
+                            design ⤵
                         </h2>
                         {DESIGN.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
