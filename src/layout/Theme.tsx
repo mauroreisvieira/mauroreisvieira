@@ -1,5 +1,6 @@
-import React from 'react';
+import classname from 'classnames';
 import Head from 'next/head';
+import React from 'react';
 
 type Meta = {
     title: string;
@@ -11,10 +12,12 @@ type Meta = {
 
 interface ThemeProps {
     meta: Meta;
+    className?: string;
 }
 
 export const Theme: React.FC<ThemeProps> = ({
     meta,
+    className,
     children,
 }: ThemeProps & React.PropsWithChildren<ThemeProps>): React.ReactElement => (
     <>
@@ -40,6 +43,13 @@ export const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:description" content={meta.description} />
             <meta name="twitter:image" content={meta.cardImage} />
         </Head>
-        <div className="max-w-screen-lg mx-auto pt-4 px-4 pg:pt-8 lg:px-8 pb-24 mt-12 lg:mt-24">{children}</div>
+        <div
+            className={classname(
+                'max-w-screen-lg mx-auto pt-4 px-4 pg:pt-8 lg:px-8 pb-24 mt-12 lg:mt-24',
+                className
+            )}
+        >
+            {children}
+        </div>
     </>
 );

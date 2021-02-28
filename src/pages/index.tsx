@@ -28,13 +28,13 @@ const Page = () => {
                             </Link>{' '}
                             or you can check what{' '}
                             <Link href="/uses">
-                                <Anchor>cool things</Anchor>
+                                <Anchor>awesome things</Anchor>
                             </Link>{' '}
                             I use on my normal workday.
                         </p>
-                        <p className="mb-10">
+                        <p className="mb-12">
                             If you are interested to know more about me you can
-                            follow me
+                            also follow me.
                         </p>
                         <Social />
                     </div>

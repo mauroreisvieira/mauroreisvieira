@@ -5,6 +5,9 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
+            screens: {
+                print: { raw: 'print' },
+            },
             keyframes: {
                 cursor: {
                     '0%, 100%': { opacity: 1 },
@@ -12,7 +15,7 @@ module.exports = {
                 },
             },
             animation: {
-                cursor: 'cursor 1s ease-in-out infinite'
+                cursor: 'cursor 1s ease-in-out infinite',
             },
             fontFamily: {
                 mono: ['JetBrains Mono', 'monospace'],
@@ -24,7 +27,7 @@ module.exports = {
                     light: '#f1427d',
                     DEFAULT: '#e91e63',
                     dark: '#da2160',
-                }
+                },
             },
             typography: (theme) => ({
                 light: {

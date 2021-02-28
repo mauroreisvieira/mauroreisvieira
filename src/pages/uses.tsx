@@ -16,12 +16,11 @@ const Uses = () => {
             </Header>
             <Theme meta={meta}>
                 <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
-                    cool things
+                    awesome things
                 </h1>
                 <div className="text-xl dark:text-white">
                     <p className="mb-16">
-                        For my workday I use a bunch of tools, most parts of
-                        that tools are open source.
+                        Here they are, the tools I use for my workday.
                     </p>
                     <div className="mb-16">
                         <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
