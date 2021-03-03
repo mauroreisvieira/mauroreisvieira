@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import classname from 'classnames';
 
 type AnchorType = React.HTMLAttributes<HTMLSpanElement> &
@@ -6,25 +6,23 @@ type AnchorType = React.HTMLAttributes<HTMLSpanElement> &
 
 interface AnchorProps extends AnchorType {
     className?: string;
+    children: React.ReactNode;
 }
 
-export const Anchor: React.FC<AnchorProps> = ({
-    className,
-    children,
-    ...otherProps
-}: AnchorProps & React.PropsWithChildren<AnchorProps>): React.ReactElement => {
-    const { href } = otherProps;
-    const TAG = href ? 'a' : 'button';
-
-    return (
-        <TAG
+export const Anchor = forwardRef(
+    (
+        { className, children, ...otherProps }: AnchorProps,
+        ref: React.Ref<HTMLAnchorElement>
+    ): React.ReactElement => (
+        <a
             {...otherProps}
+            ref={ref}
             className={classname(
                 `text-brand hover:text-brand-light focus:outline-none cursor-pointer`,
                 className
             )}
         >
             {children}
-        </TAG>
-    );
-};
+        </a>
+    )
+);

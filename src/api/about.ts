@@ -40,6 +40,7 @@ type Employment = {
 type Education = {
     school: string;
     degree: string;
+    link: string;
     city: string;
     start: Date;
     end: Date | 'present';
@@ -203,7 +204,8 @@ export const ABOUT: About = {
     ],
     education: [
         {
-            school: ' Instituto Politécnico de Leiria',
+            school: 'Instituto Politécnico de Leiria',
+            link: 'https://www.ipleiria.pt/',
             degree: 'Computer Engineering',
             city: 'Leiria',
             start: new Date('2013-09-01'),
@@ -212,7 +214,8 @@ export const ABOUT: About = {
                 'The course has been frozen since 2017, it is something I intend to finish soon.',
         },
         {
-            school: ' Instituto Politécnico de Leiria',
+            school: 'Instituto Politécnico de Leiria',
+            link: 'https://www.ipleiria.pt/',
             degree: 'Technological Specialization Course',
             city: 'Leiria',
             start: new Date('2011-11-01'),

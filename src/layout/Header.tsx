@@ -9,5 +9,5 @@ export const Header = ({
     className,
     children,
 }: HeaderProps & React.PropsWithChildren<HeaderProps>): React.ReactElement => (
-    <header className={classname('flex p-4', className)}>{children}</header>
+    <header className={classname('print:hidden flex p-4', className)}>{children}</header>
 );

@@ -1,8 +1,7 @@
 import classname from 'classnames';
-import { Anchor } from '../components';
-import { Theme } from '../layout';
-
 import { ABOUT } from '../api';
+import { Anchor } from '../components';
+import { Header, Nav, Theme } from '../layout';
 
 const Curriculum = () => {
     const meta = {
@@ -28,6 +27,9 @@ const Curriculum = () => {
 
     return (
         <>
+            <Header>
+                <Nav />
+            </Header>
             <Theme meta={meta} className="-mt-1">
                 <div className="flex items-center mb-6">
                     <div className="inline-block rounded-full p-1 border-2 border-brand mr-4">
@@ -75,7 +77,7 @@ const Curriculum = () => {
                                 <p className="uppercase font-medium mb-2">
                                     Email
                                 </p>
-                                <Anchor href={`mailto:${details.email}`}>
+                                <Anchor href={`mailto:${details.email}?subject=Hey! I saw your curriculum.`}>
                                     {details.email}
                                 </Anchor>
                             </div>
@@ -136,7 +138,9 @@ const Curriculum = () => {
                                 <div>
                                     <p>
                                         {formatDate(employ.start)} －{' '}
-                                        {employ.end === 'present'? 'present':formatDate(employ.end)}
+                                        {employ.end === 'present'
+                                            ? 'present'
+                                            : formatDate(employ.end)}
                                     </p>
                                     <p className="uppercase text-gray-500">
                                         {employ.city}
@@ -147,8 +151,14 @@ const Curriculum = () => {
                                         <p className="text-xl font-normal">
                                             {employ.job}
                                         </p>
-                                        <p className="text-gray-500 mb-4 text-brand">
-                                            {employ.employer}
+                                        <p className="mb-4">
+                                            <Anchor
+                                                href={employ.link}
+                                                target="_blank"
+                                                rel="nofollow"
+                                                title={employ.employer}>
+                                                {employ.employer}
+                                            </Anchor>
                                         </p>
                                         <ul className="list-disc list-inside">
                                             {employ.description.map(
@@ -177,7 +187,9 @@ const Curriculum = () => {
                                 <div>
                                     <p>
                                         {formatDate(educ.start)} －{' '}
-                                        {educ.end === 'present'? 'present' : formatDate(educ.end)}
+                                        {educ.end === 'present'
+                                            ? 'present'
+                                            : formatDate(educ.end)}
                                     </p>
                                     <p className="uppercase text-gray-500">
                                         {educ.city}
@@ -188,8 +200,14 @@ const Curriculum = () => {
                                         <p className="text-xl font-normal">
                                             {educ.degree}
                                         </p>
-                                        <p className="text-gray-500 mb-4 text-brand">
-                                            {educ.school}
+                                        <p className="mb-4">
+                                            <Anchor
+                                                href={educ.link}
+                                                target="_blank"
+                                                rel="nofollow"
+                                                title={educ.school}>
+                                                {educ.school}
+                                            </Anchor>
                                         </p>
                                         <div>
                                             {educ.note && (

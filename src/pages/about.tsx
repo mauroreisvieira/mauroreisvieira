@@ -1,14 +1,15 @@
+import Link from 'next/link';
+import { ABOUT } from '../api';
 import { Anchor } from '../components';
-import { Header, Theme, Nav } from '../layout';
+import { Header, Nav, Theme } from '../layout';
 
 const About = () => {
     const meta = {
-        title: 'About | Mauro Reis Vieira',
-        description: 'About | Mauro Reis Vieira',
+        title: 'About Me | Mauro Reis Vieira',
+        description: 'About Me | Mauro Reis Vieira',
     };
 
-    const experienceYears =
-        new Date().getFullYear() - new Date('2014').getFullYear();
+    const { profile } = ABOUT;
 
     return (
         <>
@@ -20,104 +21,20 @@ const About = () => {
                     about me
                 </h1>
                 <div className="text-2xl dark:text-white">
-                    <p className="mb-4">
-                        I'm Mauro Reis Vieira, a curious developer with a focus
-                        on Front End Development from Leiria, Portugal.
-                    </p>
-                    <p className="mb-4">
-                        For the past {experienceYears} years, I've always been
-                        enjoying to experiment new technologies, working with
-                        different people to solve companies issues &amp; people
-                        needs.
-                    </p>
-                    <p className="mb-4">
-                        I believe in open-source and collaboration over
-                        competition, also I love sharing my knowledge and
-                        experience with others.
-                    </p>
-                    <div className="mt-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-6">experience ⤵</h2>
-                        <p className="mb-4">
-                            <strong>Front End Developer</strong> −{' '}
-                            <Anchor
-                                href="https://www.namecheap.com/"
-                                rel="noreferrer"
-                                title="Namecheap"
-                                target="_blank">
-                                Namecheap
-                            </Anchor>
-                            <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
-                                <svg
-                                    className="w-4 h-4 mr-2"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                October 2017 –{' '}
-                                {new Date().toLocaleString('default', {
-                                    month: 'long',
-                                })}{' '}
-                                {new Date().getFullYear()} (present)
-                            </span>
+                    {profile.summary.map((summary) => (
+                        <p key={summary.id} className="mb-6">
+                            {summary.detail}
                         </p>
-                        <p className="mb-4">
-                            <strong>Full Stack Developer</strong> −{' '}
-                            <Anchor
-                                href="http://www.hi-interactive.pt/"
-                                rel="noreferrer"
-                                title="Hi INTERACTIVE"
-                                target="_blank">
-                                Hi INTERACTIVE
-                            </Anchor>
-                            <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
-                                <svg
-                                    className="w-4 h-4 mr-2"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                May 2016 – October 2017
-                            </span>
-                        </p>
-                        <p className="mb-4">
-                            <strong>Web Developer</strong> −{' '}
-                            <Anchor
-                                href="https://www.wayacross.pt/"
-                                rel="noreferrer"
-                                title="WayAcross"
-                                target="_blank">
-                                WayAcross
-                            </Anchor>
-                            <span className="flex items-center mt-2 text-base text-gray-400 dark:text-white">
-                                <svg
-                                    className="w-4 h-4 mr-2"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                April 2014 – May 2016
-                            </span>
+                    ))}
+                    <div>
+                        <p>
+                            If you want to know more details about me, I invite
+                            you to see my{' '}
+                            <Link href="/curriculum">
+                                <Anchor target="_blank" >curriculum</Anchor>
+                            </Link>
+                            , there you can find all my academic and
+                            professional background.
                         </p>
                     </div>
                 </div>
