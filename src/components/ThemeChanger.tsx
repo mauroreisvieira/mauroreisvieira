@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
-import { Button } from '.';
+import { Button } from './Button';
 
 export const ThemeChanger = () => {
     const [mounted, setMounted] = useState<boolean>(false);

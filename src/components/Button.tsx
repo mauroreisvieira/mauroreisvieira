@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import classname from 'classnames';
+import classNames from 'classnames';
 
 type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -23,7 +23,7 @@ export const Button = forwardRef(
                 {...otherProps}
                 ref={ref}
                 type="button"
-                className={classname(
+                className={classNames(
                     `inline-flex rounded-full p-3 cursor-pointer focus:outline-none hover:bg-${skin}-100 dark:hover:bg-${skin}-800 dark:text-white`,
                     className
                 )}

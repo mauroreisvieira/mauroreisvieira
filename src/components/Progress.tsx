@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import classname from 'classnames';
+import classNames from 'classnames';
 
 interface ProgressProps extends React.HTMLAttributes<HTMLSpanElement> {
     className?: string;
@@ -14,7 +14,7 @@ export const Progress = forwardRef(
             <div
                 ref={ref}
                 {...otherProps}
-                className={classname(`h-1 flex bg-brand transition duration-300 ease-in-out`, className)}
+                className={classNames(`h-1 flex bg-brand transition duration-300 ease-in-out`, className)}
             />
         </div>
     )

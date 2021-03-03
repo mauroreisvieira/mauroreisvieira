@@ -31,7 +31,7 @@ const About = () => {
                             If you want to know more details about me, I invite
                             you to see my{' '}
                             <Link href="/curriculum">
-                                <Anchor target="_blank" >curriculum</Anchor>
+                                <Anchor>curriculum</Anchor>
                             </Link>
                             , there you can find all my academic and
                             professional background.

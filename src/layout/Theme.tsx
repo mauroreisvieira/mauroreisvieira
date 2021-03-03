@@ -1,4 +1,4 @@
-import classname from 'classnames';
+import classNames from 'classnames';
 import Head from 'next/head';
 import React from 'react';
 
@@ -44,8 +44,8 @@ export const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:image" content={meta.cardImage} />
         </Head>
         <div
-            className={classname(
-                'max-w-screen-lg mx-auto pt-4 px-4 pg:pt-8 lg:px-8 pb-24 mt-12 lg:mt-24',
+            className={classNames(
+                'max-w-screen-lg mx-auto pt-4 px-4 pg:pt-8 lg:px-8 pb-24 mt-14',
                 className
             )}
         >

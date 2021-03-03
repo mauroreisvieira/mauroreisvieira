@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Progress } from '../../components';
-import { Theme, Header, Nav, Markdown } from '../../layout';
 import { getAllDocs, getDocBySlug } from '../../../lib/docs';
 import markdownToHtml from '../../../lib/markdown';
+import { Progress } from '../../components';
+import { Header, Markdown, Nav, Theme } from '../../layout';
 
 interface DocProps {
     meta: React.ComponentProps<typeof Theme>['meta'];
@@ -13,14 +13,13 @@ export const Doc: React.FC<DocProps> = ({
     meta,
     content,
 }: DocProps & React.PropsWithChildren<DocProps>) => {
-    const markdownRef = useRef();
+    const markdownRef = useRef<HTMLDivElement>(null);
     const timeout = useRef(0);
     const [width, setWidth] = useState<number>(0);
 
     const updateScrollProgress = useCallback((): void => {
+        if (!markdownRef.current) return;
         const winTop = window.pageYOffset;
-        console.log(markdownRef.current);
-        console.log(markdownRef.current.scrollHeight);
         const targetBottom =
             markdownRef.current.offsetTop + markdownRef.current.scrollHeight;
         const windowBottom = winTop + window.outerHeight;
@@ -60,9 +59,9 @@ export const Doc: React.FC<DocProps> = ({
                     <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
                         {meta.title}
                     </h1>
-                    {meta.date && (
-                        <div className="mt-4 text-gray-500 dark:text-gray-400">
-                            {new Date(meta.date)
+                    <div className="mt-4 text-gray-500 dark:text-gray-400">
+                        {meta.date &&
+                            new Date(meta.date)
                                 .toLocaleDateString('en-US', {
                                     weekday: 'long',
                                     year: 'numeric',
@@ -70,9 +69,8 @@ export const Doc: React.FC<DocProps> = ({
                                     day: 'numeric',
                                 })
                                 .toString()}{' '}
-                            by {meta.author}
-                        </div>
-                    )}
+                        {meta.author && <span>by {meta.author}</span>}
+                    </div>
                 </div>
                 <Markdown ref={markdownRef} content={{ __html: content }} />
             </Theme>
@@ -82,12 +80,13 @@ export const Doc: React.FC<DocProps> = ({
 
 type StaticProps = {
     params: {
+        title: string;
         slug: string;
     };
 };
 
 export async function getStaticProps({ params }: StaticProps) {
-    const { slug } = params;
+    const { slug, title } = params;
     const doc = getDocBySlug(slug);
     const content = await markdownToHtml(doc.content || '');
 
@@ -95,16 +94,18 @@ export async function getStaticProps({ params }: StaticProps) {
         props: {
             ...doc,
             content,
+            title,
         },
     };
 }
 
 export async function getStaticPaths() {
     const docs = getAllDocs();
+    console.log(docs);
     return {
         paths: docs.map((doc) => ({
             params: {
-                slug: doc.slug,
+                slug: doc.slug
             },
         })),
         fallback: true,

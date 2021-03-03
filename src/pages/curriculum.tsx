@@ -1,4 +1,4 @@
-import classname from 'classnames';
+import classNames from 'classnames';
 import { ABOUT } from '../api';
 import { Anchor } from '../components';
 import { Header, Nav, Theme } from '../layout';
@@ -48,10 +48,10 @@ const Curriculum = () => {
                         </p>
                     </div>
                 </div>
-                <div className="dark:text-white text-sm">
+                <div className="dark:text-white print:text-sm">
                     <div className="flex mb-8">
                         <div className="flex-1">
-                            <div className="mb-2 grid grid-cols-2">
+                            <div className="mb-2 grid md:grid-cols-2">
                                 <div>
                                     <p className="uppercase font-medium mb-2">
                                         Address
@@ -65,7 +65,7 @@ const Curriculum = () => {
                                     <p>{details.country}</p>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2">
+                            <div className="grid md:grid-cols-2">
                                 <p className="uppercase font-medium mb-2">
                                     Nationality
                                 </p>
@@ -73,7 +73,7 @@ const Curriculum = () => {
                             </div>
                         </div>
                         <div className="flex-1 pl-8">
-                            <div className="grid grid-cols-2">
+                            <div className="grid md:grid-cols-2">
                                 <p className="uppercase font-medium mb-2">
                                     Email
                                 </p>
@@ -81,19 +81,19 @@ const Curriculum = () => {
                                     {details.email}
                                 </Anchor>
                             </div>
-                            <div className="grid grid-cols-2">
+                            <div className="grid md:grid-cols-2">
                                 <p className="uppercase font-medium mb-2">
                                     Phone
                                 </p>
                                 <p>{details.phone}</p>
                             </div>
-                            <div className="grid grid-cols-2">
+                            <div className="grid md:grid-cols-2">
                                 <p className="uppercase font-medium mb-2">
                                     Driving License
                                 </p>
                                 <p>{details.license}</p>
                             </div>
-                            <div className="mb-2 grid grid-cols-2">
+                            <div className="mb-2 grid md:grid-cols-2">
                                 <p className="uppercase font-medium mb-2">
                                     Birth Date
                                 </p>
@@ -111,7 +111,7 @@ const Curriculum = () => {
                         </div>
                     </div>
 
-                    <div className="mb-8 grid grid-cols-3 gap-8">
+                    <div className="mb-8 grid md:grid-cols-3 gap-8">
                         <div>
                             <h2 className="text-xl font-bold mb-4">Profile</h2>
                         </div>
@@ -133,7 +133,7 @@ const Curriculum = () => {
                             <div
                                 // eslint-disable-next-line react/no-array-index-key
                                 key={index}
-                                className="mb-2 grid grid-cols-3 gap-8"
+                                className="mb-2 grid md:grid-cols-3 gap-8"
                             >
                                 <div>
                                     <p>
@@ -182,7 +182,7 @@ const Curriculum = () => {
                             <div
                                 // eslint-disable-next-line react/no-array-index-key
                                 key={index}
-                                className="mb-2 grid grid-cols-3 gap-8"
+                                className="mb-2 grid md:grid-cols-3 gap-8"
                             >
                                 <div>
                                     <p>
@@ -240,11 +240,11 @@ const Curriculum = () => {
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 border-t mb-4 pt-4">
+                    <div className="grid md:grid-cols-3 gap-8 border-t mb-4 pt-4">
                         <div>
                             <h2 className="text-xl font-bold mb-4">Skills</h2>
                         </div>
-                        <div className="col-span-2 grid grid-cols-2 gap-2">
+                        <div className="col-span-2 grid md:grid-cols-2 gap-2">
                             {skills.map((skill, index) => (
                                 // eslint-disable-next-line react/no-array-index-key
                                 <div key={index} className="grid grid-cols-2">
@@ -254,7 +254,7 @@ const Curriculum = () => {
                                             // eslint-disable-next-line react/no-array-index-key
                                             <svg
                                                 key={i}
-                                                className={classname(
+                                                className={classNames(
                                                     'mx-1 w-3 h-3 fill-current',
                                                     {
                                                         'text-brand':
@@ -277,13 +277,13 @@ const Curriculum = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 border-t mb-4 pt-4">
+                    <div className="grid md:grid-cols-3 gap-8 border-t mb-4 pt-4">
                         <div>
                             <h2 className="text-xl font-bold mb-4">
                                 Languages
                             </h2>
                         </div>
-                        <div className="col-span-2 grid grid-cols-2 gap-2">
+                        <div className="col-span-2 grid md:grid-cols-2 gap-2">
                             {languages.map((language, index) => (
                                 // eslint-disable-next-line react/no-array-index-key
                                 <div key={index} className="grid grid-cols-2">
@@ -293,7 +293,7 @@ const Curriculum = () => {
                                             // eslint-disable-next-line react/no-array-index-key
                                             <svg
                                                 key={i}
-                                                className={classname(
+                                                className={classNames(
                                                     'mx-1 w-3 h-3 fill-current',
                                                     {
                                                         'text-brand':
@@ -324,7 +324,7 @@ const Curriculum = () => {
                                     <h2 className="text-xl font-bold mb-4">
                                         {item.name}
                                     </h2>
-                                    <div className="mb-2 grid grid-cols-3 gap-8">
+                                    <div className="mb-2 grid md:grid-cols-3 gap-8">
                                         <div>
                                             <p className="mb-2">
                                                 {formatDate(item.start)}
@@ -352,7 +352,7 @@ const Curriculum = () => {
                     </div>
 
                     {hobbies && (
-                        <div className="mb-8 grid grid-cols-3 gap-8">
+                        <div className="mb-8 grid md:grid-cols-3 gap-8">
                             <div>
                                 <h2 className="text-xl font-bold mb-4">
                                     Hobbies

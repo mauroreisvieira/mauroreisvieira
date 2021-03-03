@@ -86,4 +86,41 @@ export const DESIGN: Uses[] = [
         link: 'https://imageoptim.com/mac',
         description: 'Great for optimizing raster images like PNG, JPEG without losing quality.'
     },
+    {
+        name: 'Gifski',
+        link: 'https://gif.ski/',
+        description: 'Cconvert videos in Highest-quality GIF, with UI interface and also CLI.'
+    },
+];
+
+export const PRODUCTIVITY: Uses[] = [
+    {
+        name: 'Alfred',
+        link: 'https://www.alfredapp.com/',
+        description: 'For many years I used Spotlight to open applications, but I feel the need to have something that does more, such as opening web pages, executing commands...'
+    },
+    {
+        name: 'Google Drive',
+        link: 'https://www.google.com/intl/pt-PT/drive/',
+        description: 'I use to save all my important files.'
+    },
+    {
+        name: 'Notion',
+        link: 'https://www.notion.so/',
+        description: 'I use that tool to write my notes and create my tasks.'
+    },
+];
+
+
+export const HOSTING: Uses[] = [
+    {
+        name: 'Namecheap',
+        link: 'https://www.namecheap.com/',
+        description: 'For all my personal projects who require PHP and MySQL.'
+    },
+    {
+        name: 'Vercel',
+        link: 'https://vercel.com/',
+        description: 'For my static sites. Easy configuration, fast deployment and huge performance.'
+    },
 ];
