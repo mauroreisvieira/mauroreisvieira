@@ -15,7 +15,7 @@ export const Anchor = forwardRef(
             {...otherProps}
             ref={ref}
             className={classNames(
-                `inline-flex items-center text-brand hover:text-brand-light underline focus:outline-none cursor-pointer`,
+                'inline-flex items-center text-brand hover:text-brand-light underline focus:outline-none cursor-pointer',
                 className
             )}
         >

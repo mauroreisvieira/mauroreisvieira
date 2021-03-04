@@ -5,14 +5,13 @@ type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 interface ButtonProps extends ButtonType {
-    skin?: 'gray';
     className?: string;
     children: React.ReactNode;
 }
 
 export const Button = forwardRef(
     (
-        { skin = 'gray', className, children, ...otherProps }: ButtonProps,
+        { className, children, ...otherProps }: ButtonProps,
         ref: React.Ref<HTMLButtonElement & HTMLAnchorElement>
     ): React.ReactElement => {
         const { href } = otherProps;
@@ -24,7 +23,7 @@ export const Button = forwardRef(
                 ref={ref}
                 type="button"
                 className={classNames(
-                    `inline-flex rounded-full p-3 cursor-pointer focus:outline-none hover:bg-${skin}-100 dark:hover:bg-${skin}-800 dark:text-white`,
+                    'inline-flex rounded-full p-3 cursor-pointer focus:outline-none dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800',
                     className
                 )}
             >

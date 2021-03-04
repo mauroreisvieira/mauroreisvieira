@@ -1,6 +1,7 @@
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
+import { Anchor } from '@/components/Anchor';
 import { getSortedPostsData, PostData } from '@/lib/docs';
 import { GetStaticPropsResult } from 'next';
 import Link from 'next/link';
@@ -40,10 +41,10 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
                                         }
                                     )}
                                 </p>
-                                <Link href={`/blog/${post.id}`}>
-                                    <h2 className="mb-4 text-3xl font-black cursor-pointer underline">
+                                <Link href={`/posts/${post.id}`}>
+                                    <Anchor className="mb-4 text-3xl font-black cursor-pointer underline">
                                         {post.title}
-                                    </h2>
+                                    </Anchor>
                                 </Link>
                                 <p className="mb-4">
                                     {post.description}
