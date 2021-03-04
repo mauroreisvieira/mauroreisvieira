@@ -13,7 +13,7 @@ export const Markdown = forwardRef(
         { content }: MarkdownProps,
         ref: React.Ref<HTMLDivElement>
     ): React.ReactElement => (
-        <div
+        <article
             ref={ref}
             className="prose prose-xl dark:prose-light mx-auto"
             // eslint-disable-next-line react/no-danger

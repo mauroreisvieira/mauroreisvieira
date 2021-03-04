@@ -21,7 +21,7 @@ module.exports = {
                 mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
-                black: '#1f1f20',
+                black: '#1c1b1b',
                 gray: colors.trueGray,
                 brand: {
                     light: '#f1427d',

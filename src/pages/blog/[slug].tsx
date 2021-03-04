@@ -1,5 +1,5 @@
 import { GetStaticPropsResult } from 'next';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
@@ -21,6 +21,12 @@ export const Slug: React.FC<DocProps> = ({
     postData,
 }: DocProps & React.PropsWithChildren<DocProps>) => {
     const { title, description, date, content } = postData;
+    const [time, setTime] = useState<number>();
+
+    useEffect(() => {
+        const count = content.match(/\w+/g)?.length || 0;
+        setTime(Math.ceil(count / 250));
+    }, [content]);
 
     return (
         <div>
@@ -46,7 +52,8 @@ export const Slug: React.FC<DocProps> = ({
                                     month: 'long',
                                     day: 'numeric',
                                 })
-                                .toString()}{' '}
+                                .toString()}{' － '}
+                            <span>{time} min read</span>
                     </div>
                 </div>
                 <Markdown content={{ __html: content }} />

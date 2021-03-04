@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
-import { Button } from './Button';
+import { Button } from '@/components/Button';
 
 interface ThemeChangerProps {
     className?: string;
