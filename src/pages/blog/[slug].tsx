@@ -77,6 +77,7 @@ export const getStaticProps = async ({
         },
     };
 };
+
 export const getStaticPaths = async () => {
     const paths = getSortedPostsData().map(({ id }) => ({
         params: {

@@ -5,7 +5,7 @@ type ButtonType = React.ButtonHTMLAttributes<HTMLButtonElement> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 interface ButtonProps extends ButtonType {
-    skin?: 'gray' | 'indigo';
+    skin?: 'gray';
     className?: string;
     children: React.ReactNode;
 }
