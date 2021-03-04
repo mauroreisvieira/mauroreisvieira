@@ -1,3 +1,2 @@
-export { SETUP, DEVELOPMENT, DESIGN, PRODUCTIVITY, HOSTING } from './uses'
-export { POSTS } from './blog'
-export { ABOUT } from './about'
+export { SETUP, DEVELOPMENT, DESIGN, PRODUCTIVITY, HOSTING } from './uses';
+export { ABOUT } from './about';

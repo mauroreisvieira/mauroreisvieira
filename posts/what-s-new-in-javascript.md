@@ -1,8 +1,7 @@
 ---
 title: "What's new in Javascript?"
 description: "Example using Prism / Markdown with Next.js including switching syntax highlighting themes."
-author: "Mauro Reis Vieira"
-date: "2019-10-04"
+date: "2020-11-22"
 ---
 
 Some of the new features are still proposal, so if you are playing with the code Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.

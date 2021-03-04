@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { useTheme } from 'next-themes';
-
+import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 
-export const ThemeChanger = () => {
+interface ThemeChangerProps {
+    className?: string;
+}
+
+export const ThemeChanger: React.FC<ThemeChangerProps> = ({ className }) => {
     const [mounted, setMounted] = useState<boolean>(false);
     const { theme, setTheme } = useTheme();
 
@@ -12,7 +16,7 @@ export const ThemeChanger = () => {
     if (!mounted) return null;
 
     return (
-        <>
+        <div className={classNames(className)}>
             {theme === 'light' && (
                 <Button
                     onClick={() => setTheme('dark')}
@@ -53,6 +57,6 @@ export const ThemeChanger = () => {
                     </svg>
                 </Button>
             )}
-        </>
+        </div>
     );
 };

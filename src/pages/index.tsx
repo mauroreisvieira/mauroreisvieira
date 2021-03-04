@@ -1,6 +1,9 @@
 import Link from 'next/link';
-import { Anchor } from '../components';
-import { Header, Nav, Theme, Social } from '../layout';
+import { Anchor } from '@/components/Anchor';
+import { Header } from '@/layout/Header';
+import { Nav } from '@/layout/Nav';
+import { Theme } from '@/layout/Theme';
+import { Social } from '@/layout/Social';
 
 const Page = () => {
     const meta = {

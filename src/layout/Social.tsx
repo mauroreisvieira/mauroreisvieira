@@ -1,8 +1,15 @@
+import classNames from 'classnames';
 import React from 'react';
-import { Button } from '../components';
+import { Button } from '@/components/Button';
 
-export const Social = (): React.ReactElement => (
-    <div className="space-x-3">
+interface SocialProps {
+    className?: string;
+}
+
+export const Social: React.FC<SocialProps> = ({
+    className,
+}): React.ReactElement => (
+    <div className={classNames('space-x-3', className)}>
         <Button
             href="https://github.com/mauroreisvieira"
             target="_blank"

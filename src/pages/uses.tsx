@@ -1,5 +1,7 @@
-import { Anchor } from '../components';
-import { Header, Nav, Theme } from '../layout';
+import { Anchor } from '@/components/Anchor';
+import { Header } from '@/layout/Header';
+import { Nav } from '@/layout/Nav';
+import { Theme } from '@/layout/Theme';
 
 import { DEVELOPMENT, SETUP, DESIGN, PRODUCTIVITY, HOSTING } from '../api';
 

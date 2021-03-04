@@ -2,12 +2,12 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import React from 'react';
 
-type Meta = {
+interface Meta {
     title: string;
     description: string;
     cardImage?: string;
+    date?: string;
     author?: string;
-    date?: Date;
 };
 
 interface ThemeProps {

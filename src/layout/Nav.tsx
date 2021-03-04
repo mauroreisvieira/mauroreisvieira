@@ -1,9 +1,15 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import React from 'react';
-import { Button, ThemeChanger } from '../components';
+import { Button } from '@/components/Button';
+import { ThemeChanger } from '@/components/ThemeChanger';
 
-export const Nav = (): React.ReactElement => (
-    <nav className="flex w-full justify-between">
+interface NavProps {
+    className?: string;
+}
+
+export const Nav: React.FC<NavProps> = ({ className }): React.ReactElement => (
+    <nav className={classNames('flex w-full justify-between', className)}>
         <div>
             <Link href="/">
                 <Button aria-label="Home">

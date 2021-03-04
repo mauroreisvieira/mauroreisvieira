@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import { Anchor } from '@/components/Anchor';
+import { Header } from '@/layout/Header';
+import { Nav } from '@/layout/Nav';
+import { Theme } from '@/layout/Theme';
 import { ABOUT } from '../api';
-import { Anchor } from '../components';
-import { Header, Nav, Theme } from '../layout';
 
 const About = () => {
     const meta = {
