@@ -1,4 +1,3 @@
-import { Anchor } from '@/components/Anchor';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
