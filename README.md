@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [Node.js][https://nodejs.org/en/]
+- [Node.js](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
 ## Technologies
@@ -11,7 +11,7 @@
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com)
 
-**Note:** To control the generated stylesheet's filesize, I use [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+**Note:** To control the generated stylesheet's filesize, I use [`purge`](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) option to remove unused CSS.
 
 ## Usage
 
