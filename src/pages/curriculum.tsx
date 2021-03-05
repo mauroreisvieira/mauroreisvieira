@@ -1,8 +1,8 @@
-import { Anchor } from '@/components/Anchor';
-import { Header } from '@/layout/Header';
-import { Nav } from '@/layout/Nav';
-import { Healine } from '@/components/Healine';
-import { Theme } from '@/layout/Theme';
+import Anchor from '@/components/Anchor';
+import Header from '@/layout/Header';
+import Nav from '@/layout/Nav';
+import Healine from '@/components/Healine';
+import Theme from '@/layout/Theme';
 import classNames from 'classnames';
 import { monthYear, weekdayYearMonthDay } from '@/utils/date';
 import { ABOUT } from '@/api/about';

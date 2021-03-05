@@ -15,7 +15,7 @@ interface ThemeProps {
     className?: string;
 }
 
-export const Theme: React.FC<ThemeProps> = ({
+const Theme: React.FC<ThemeProps> = ({
     meta,
     className,
     children,
@@ -53,3 +53,5 @@ export const Theme: React.FC<ThemeProps> = ({
         </div>
     </>
 );
+
+export default Theme;

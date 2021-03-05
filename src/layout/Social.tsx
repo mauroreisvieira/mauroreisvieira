@@ -1,4 +1,4 @@
-import { Button } from '@/components/Button';
+import Button from '@/components/Button';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -6,7 +6,7 @@ interface SocialProps {
     className?: string;
 }
 
-export const Social: React.FC<SocialProps> = ({
+const Social: React.FC<SocialProps> = ({
     className,
 }): React.ReactElement => (
     <div className={classNames('space-x-3', className)}>
@@ -98,3 +98,5 @@ export const Social: React.FC<SocialProps> = ({
         </Button>
     </div>
 );
+
+export default Social;

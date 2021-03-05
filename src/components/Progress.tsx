@@ -5,7 +5,7 @@ interface ProgressProps extends React.HTMLAttributes<HTMLSpanElement> {
     className?: string;
 }
 
-export const Progress = forwardRef(
+const Progress = forwardRef(
     (
         { className, ...otherProps }: ProgressProps,
         ref: React.Ref<HTMLDivElement>
@@ -19,3 +19,5 @@ export const Progress = forwardRef(
         </div>
     )
 );
+
+export default Progress;

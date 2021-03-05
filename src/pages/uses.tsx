@@ -1,9 +1,9 @@
 import { DESIGN, DEVELOPMENT, HOSTING, PRODUCTIVITY, SETUP } from '@/api/uses';
-import { Anchor } from '@/components/Anchor';
-import { Healine } from '@/components/Healine';
-import { Header } from '@/layout/Header';
-import { Nav } from '@/layout/Nav';
-import { Theme } from '@/layout/Theme';
+import Anchor from '@/components/Anchor';
+import Healine from '@/components/Healine';
+import Header from '@/layout/Header';
+import Nav from '@/layout/Nav';
+import Theme from '@/layout/Theme';
 
 const Uses = () => {
     const meta = {

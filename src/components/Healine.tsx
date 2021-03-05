@@ -15,7 +15,7 @@ interface HealineProps {
     children: React.ReactNode;
 }
 
-export const Healine = ({
+const Healine = ({
     type = 'h1',
     className,
     children,
@@ -47,3 +47,5 @@ export const Healine = ({
         </TAG>
     );
 };
+
+export default Healine;

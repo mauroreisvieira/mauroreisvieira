@@ -1,8 +1,8 @@
-import { Anchor } from '@/components/Anchor';
-import { Healine } from '@/components/Healine';
-import { Header } from '@/layout/Header';
-import { Nav } from '@/layout/Nav';
-import { Theme } from '@/layout/Theme';
+import Anchor from '@/components/Anchor';
+import Healine from '@/components/Healine';
+import Header from '@/layout/Header';
+import Nav from '@/layout/Nav';
+import Theme from '@/layout/Theme';
 import { getSortedPostsData, PostData } from '@/lib/docs';
 import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';

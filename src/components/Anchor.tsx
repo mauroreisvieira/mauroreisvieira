@@ -6,7 +6,7 @@ interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children: React.ReactNode;
 }
 
-export const Anchor = forwardRef(
+const Anchor = forwardRef(
     (
         { className, children, ...otherProps }: AnchorProps,
         ref: React.Ref<HTMLAnchorElement>
@@ -23,3 +23,5 @@ export const Anchor = forwardRef(
         </a>
     )
 );
+
+export default Anchor;

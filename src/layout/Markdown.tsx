@@ -8,7 +8,7 @@ interface MarkdownProps {
     content: DangerouslySetInnerHTML;
 }
 
-export const Markdown = forwardRef(
+const Markdown = forwardRef(
     (
         { content }: MarkdownProps,
         ref: React.Ref<HTMLDivElement>
@@ -21,3 +21,5 @@ export const Markdown = forwardRef(
         />
     )
 );
+
+export default Markdown;

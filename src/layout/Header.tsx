@@ -5,7 +5,7 @@ interface HeaderProps {
     className?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({
+const Header: React.FC<HeaderProps> = ({
     className,
     children,
 }: HeaderProps & React.PropsWithChildren<HeaderProps>): React.ReactElement => (
@@ -13,3 +13,5 @@ export const Header: React.FC<HeaderProps> = ({
         {children}
     </header>
 );
+
+export default Header;

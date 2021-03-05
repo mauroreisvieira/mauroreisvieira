@@ -1,5 +1,5 @@
-import { Button } from '@/components/Button';
-import { ThemeChanger } from '@/components/ThemeChanger';
+import Button from '@/components/Button';
+import ThemeChanger from '@/components/ThemeChanger';
 import classNames from 'classnames';
 import Link from 'next/link';
 import React from 'react';
@@ -8,7 +8,7 @@ interface NavProps {
     className?: string;
 }
 
-export const Nav: React.FC<NavProps> = ({ className }): React.ReactElement => (
+const Nav: React.FC<NavProps> = ({ className }): React.ReactElement => (
     <nav className={classNames('flex w-full justify-between', className)}>
         <div>
             <Link href="/">
@@ -35,3 +35,5 @@ export const Nav: React.FC<NavProps> = ({ className }): React.ReactElement => (
         </div>
     </nav>
 );
+
+export default Nav;

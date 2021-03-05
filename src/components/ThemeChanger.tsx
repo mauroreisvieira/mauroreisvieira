@@ -1,4 +1,4 @@
-import { Button } from '@/components/Button';
+import Button from '@/components/Button';
 import classNames from 'classnames';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ interface ThemeChangerProps {
     className?: string;
 }
 
-export const ThemeChanger: React.FC<ThemeChangerProps> = ({ className }) => {
+const ThemeChanger: React.FC<ThemeChangerProps> = ({ className }) => {
     const [mounted, setMounted] = useState<boolean>(false);
     const { theme, setTheme } = useTheme();
 
@@ -60,3 +60,5 @@ export const ThemeChanger: React.FC<ThemeChangerProps> = ({ className }) => {
         </div>
     );
 };
+
+export default ThemeChanger;

@@ -1,9 +1,9 @@
-import { Anchor } from '@/components/Anchor';
-import { Healine } from '@/components/Healine';
-import { Header } from '@/layout/Header';
-import { Nav } from '@/layout/Nav';
-import { Social } from '@/layout/Social';
-import { Theme } from '@/layout/Theme';
+import Anchor from '@/components/Anchor';
+import Healine from '@/components/Healine';
+import Header from '@/layout/Header';
+import Nav from '@/layout/Nav';
+import Social from '@/layout/Social';
+import Theme from '@/layout/Theme';
 import Link from 'next/link';
 
 const Page = () => {

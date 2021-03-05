@@ -1,9 +1,9 @@
-import { Healine } from '@/components/Healine';
-import { Progress } from '@/components/Progress';
-import { Header } from '@/layout/Header';
-import { Markdown } from '@/layout/Markdown';
-import { Nav } from '@/layout/Nav';
-import { Theme } from '@/layout/Theme';
+import Healine from '@/components/Healine';
+import Progress from '@/components/Progress';
+import Header from '@/layout/Header';
+import Markdown from '@/layout/Markdown';
+import Nav from '@/layout/Nav';
+import Theme from '@/layout/Theme';
 import { getPost, getSortedPostsData, PostData } from '@/lib/docs';
 import markdownToHtml from '@/lib/markdown';
 import { weekdayYearMonthDay } from '@/utils/date';
