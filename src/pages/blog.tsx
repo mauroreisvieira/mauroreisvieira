@@ -41,7 +41,7 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
                                         }
                                     )}
                                 </p>
-                                <Link href={`/posts/${post.id}`}>
+                                <Link href={`/post/${post.id}`}>
                                     <Anchor className="mb-4 text-3xl font-black cursor-pointer underline">
                                         {post.title}
                                     </Anchor>
