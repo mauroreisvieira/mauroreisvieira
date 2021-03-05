@@ -5,7 +5,7 @@ import { Healine } from '@/components/Healine';
 import { Theme } from '@/layout/Theme';
 import classNames from 'classnames';
 import { monthYear, weekdayYearMonthDay } from '@/utils/date';
-import { ABOUT } from '../api';
+import { ABOUT } from '@/api/about';
 
 const Curriculum = () => {
     const meta = {
@@ -151,7 +151,7 @@ const Curriculum = () => {
                                             <Anchor
                                                 href={employ.link}
                                                 target="_blank"
-                                                rel="nofollow"
+                                                rel="noopener noreferrer"
                                                 title={employ.employer}
                                             >
                                                 {employ.employer}
@@ -203,7 +203,7 @@ const Curriculum = () => {
                                             <Anchor
                                                 href={educ.link}
                                                 target="_blank"
-                                                rel="nofollow"
+                                                rel="noopener noreferrer"
                                                 title={educ.school}
                                             >
                                                 {educ.school}

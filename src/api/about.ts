@@ -54,10 +54,10 @@ type Skills = {
 };
 
 type Life = {
-    name: string;
+    name?: string;
     start: Date;
     end: Date;
-    description?: Description[];
+    description: Description[];
 };
 
 interface About {

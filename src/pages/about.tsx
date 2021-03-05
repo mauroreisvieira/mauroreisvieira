@@ -1,11 +1,10 @@
-import Link from 'next/link';
+import { ABOUT } from '@/api/about';
 import { Anchor } from '@/components/Anchor';
 import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
 import { monthYear } from '@/utils/date';
-import { ABOUT } from '../api';
 
 const About = () => {
     const meta = {
@@ -33,12 +32,12 @@ const About = () => {
                         <Healine type="h2" className="mb-6">
                             experience
                         </Healine>
-                        {employment.map((employ, index) => (
-                            <p className="mb-6">
+                        {employment.map((employ) => (
+                            <p className="mb-6" key={employ.job}>
                                 <strong>{employ.job}</strong> −{' '}
                                 <Anchor
                                     href={employ.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     title={employ.employer}
                                     target="_blank"
                                 >

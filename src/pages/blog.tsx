@@ -1,10 +1,10 @@
+import { Anchor } from '@/components/Anchor';
+import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
-import { Anchor } from '@/components/Anchor';
-import { Healine } from '@/components/Healine';
-import { weekdayYearMonthDay } from '@/utils/date';
 import { getSortedPostsData, PostData } from '@/lib/docs';
+import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';
 import Link from 'next/link';
 import React from 'react';
@@ -26,9 +26,7 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
             </Header>
             <Theme meta={meta}>
                 <div className="dark:text-white">
-                    <Healine className="mb-12">
-                        blog
-                    </Healine>
+                    <Healine className="mb-12">blog</Healine>
                     {postsData.map((post) => (
                         <div key={post.id} className="mb-8">
                             <div className="mb-16">
@@ -40,9 +38,7 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
                                         {post.title}
                                     </Anchor>
                                 </Link>
-                                <p className="mb-4">
-                                    {post.description}
-                                </p>
+                                <p className="mb-4">{post.description}</p>
                             </div>
                         </div>
                     ))}

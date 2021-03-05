@@ -1,6 +1,6 @@
+import { Button } from '@/components/Button';
 import classNames from 'classnames';
 import React from 'react';
-import { Button } from '@/components/Button';
 
 interface SocialProps {
     className?: string;
@@ -13,7 +13,7 @@ export const Social: React.FC<SocialProps> = ({
         <Button
             href="https://github.com/mauroreisvieira"
             target="_blank"
-            rel="nofollow"
+            rel="noopener noreferrer"
             title="Github"
         >
             <svg
@@ -30,7 +30,7 @@ export const Social: React.FC<SocialProps> = ({
         <Button
             href="https://twitter.com/mauroreisvieira"
             target="_blank"
-            rel="nofollow"
+            rel="noopener noreferrer"
             title="Github"
         >
             <svg
@@ -47,7 +47,7 @@ export const Social: React.FC<SocialProps> = ({
         <Button
             href="https://www.linkedin.com/in/mauroreisvieira/"
             target="_blank"
-            rel="nofollow"
+            rel="noopener noreferrer"
             title="LinkedIn"
         >
             <svg
@@ -73,7 +73,7 @@ export const Social: React.FC<SocialProps> = ({
         <Button
             href="https://codepen.io/mauroreisvieira/"
             target="_blank"
-            rel="nofollow"
+            rel="noopener noreferrer"
             title="Codepen"
         >
             <svg

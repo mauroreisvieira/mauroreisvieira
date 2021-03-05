@@ -1,8 +1,8 @@
+import { Button } from '@/components/Button';
+import { ThemeChanger } from '@/components/ThemeChanger';
 import classNames from 'classnames';
 import Link from 'next/link';
 import React from 'react';
-import { Button } from '@/components/Button';
-import { ThemeChanger } from '@/components/ThemeChanger';
 
 interface NavProps {
     className?: string;

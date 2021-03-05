@@ -1,5 +1,11 @@
-import React, { forwardRef } from 'react';
 import classNames from 'classnames';
+import React from 'react';
+
+type HealineSizes = {
+    [key: string]: {
+        size: string;
+    };
+};
 
 type HealineType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 
@@ -14,7 +20,7 @@ export const Healine = ({
     className,
     children,
 }: HealineProps): React.ReactElement => {
-    const SIZES = {
+    const SIZES: HealineSizes = {
         h1: {
             size: 'text-6xl lg:text-8xl',
         },

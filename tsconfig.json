@@ -19,6 +19,7 @@
     "strict": true,
     "target": "esnext",
     "paths": {
+      "@/api/*": ["src/api/*"],
       "@/components/*": ["src/components/*"],
       "@/layout/*": ["src/layout/*"],
       "@/lib/*": ["src/lib/*"],

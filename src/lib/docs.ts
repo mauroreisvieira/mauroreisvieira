@@ -7,7 +7,7 @@ export interface PostData {
     title: string;
     description: string;
     content: string;
-    date: string;
+    date: Date;
     image?: string;
 };
 

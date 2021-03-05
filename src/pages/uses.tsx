@@ -1,10 +1,9 @@
-import { Healine } from '@/components/Healine';
+import { DESIGN, DEVELOPMENT, HOSTING, PRODUCTIVITY, SETUP } from '@/api/uses';
 import { Anchor } from '@/components/Anchor';
+import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
-
-import { DEVELOPMENT, SETUP, DESIGN, PRODUCTIVITY, HOSTING } from '../api';
 
 const Uses = () => {
     const meta = {
@@ -31,7 +30,7 @@ const Uses = () => {
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
                                     href={item.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="font-medium"
                                     title={item.name}
                                     target="_blank"
@@ -51,7 +50,7 @@ const Uses = () => {
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
                                     href={item.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="font-medium"
                                     title={item.name}
                                     target="_blank"
@@ -71,7 +70,7 @@ const Uses = () => {
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
                                     href={item.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="font-medium"
                                     title={item.name}
                                     target="_blank"
@@ -91,7 +90,7 @@ const Uses = () => {
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
                                     href={item.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="font-medium"
                                     title={item.name}
                                     target="_blank"
@@ -111,7 +110,7 @@ const Uses = () => {
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
                                     href={item.link}
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="font-medium"
                                     title={item.name}
                                     target="_blank"

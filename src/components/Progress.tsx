@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { forwardRef } from 'react';
 
 interface ProgressProps extends React.HTMLAttributes<HTMLSpanElement> {
     className?: string;

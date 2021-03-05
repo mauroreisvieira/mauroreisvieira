@@ -1,14 +1,14 @@
-import { GetStaticPropsResult } from 'next';
-import React, { useEffect, useState } from 'react';
 import { Healine } from '@/components/Healine';
 import { Progress } from '@/components/Progress';
 import { Header } from '@/layout/Header';
+import { Markdown } from '@/layout/Markdown';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
-import { Markdown } from '@/layout/Markdown';
-import { weekdayYearMonthDay } from '@/utils/date';
 import { getPost, getSortedPostsData, PostData } from '@/lib/docs';
 import markdownToHtml from '@/lib/markdown';
+import { weekdayYearMonthDay } from '@/utils/date';
+import { GetStaticPropsResult } from 'next';
+import React, { useEffect, useState } from 'react';
 
 interface Params {
     params: {
@@ -36,7 +36,6 @@ export const Slug: React.FC<DocProps> = ({
         const scrolled = (winScroll / height) * 100;
         setWidth(height > 0 ? scrolled / 100 : 0);
     };
-
 
     useEffect(() => {
         const count = content.match(/\w+/g)?.length || 0;
