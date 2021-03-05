@@ -5,7 +5,7 @@ import React from 'react';
 interface Meta {
     title: string;
     description: string;
-    cardImage?: string;
+    image?: string;
     date?: string;
     author?: string;
 };
@@ -29,19 +29,19 @@ export const Theme: React.FC<ThemeProps> = ({
                 content="width=device-width, initial-scale=1"
                 name="viewport"
             />
-            <meta name="robots" content="follow, index" />
-            <link href="/favicon.ico" rel="shortcut icon" />
             <meta content={meta.description} name="description" />
             <meta property="og:type" content="website" />
-            <meta property="og:site_name" content={meta.title} />
-            <meta property="og:description" content={meta.description} />
+            <meta property="og:site_name" content="Mauro Reis Vieira" />
             <meta property="og:title" content={meta.title} />
-            <meta property="og:image" content={meta.cardImage} />
+            <meta property="og:description" content={meta.description} />
+            <meta property="og:image" content={meta.image} />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@vercel" />
+            <meta name="twitter:site" content="@mauroreisvieira" />
             <meta name="twitter:title" content={meta.title} />
             <meta name="twitter:description" content={meta.description} />
-            <meta name="twitter:image" content={meta.cardImage} />
+            <meta name="theme-color" content="#000000" />
+            <meta name="robots" content="follow, index" />
+            <link href="/favicon.ico" rel="shortcut icon" />
         </Head>
         <div
             className={classNames(

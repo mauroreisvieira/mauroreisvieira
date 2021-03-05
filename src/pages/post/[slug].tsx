@@ -5,6 +5,7 @@ import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
 import { Markdown } from '@/layout/Markdown';
+import { weekdayYearMonthDay } from '@/utils/date';
 import { getPost, getSortedPostsData, PostData } from '@/lib/docs';
 import markdownToHtml from '@/lib/markdown';
 
@@ -21,7 +22,7 @@ interface DocProps {
 export const Slug: React.FC<DocProps> = ({
     postData,
 }: DocProps & React.PropsWithChildren<DocProps>) => {
-    const { title, description, date, content } = postData;
+    const { title, description, image, date, content } = postData;
     const [time, setTime] = useState<number>();
 
     useEffect(() => {
@@ -38,21 +39,15 @@ export const Slug: React.FC<DocProps> = ({
                 meta={{
                     title,
                     description,
+                    image,
                 }}
             >
                 <div className="mb-16 text-center mx-auto">
                     <Healine className="mb-12">{title}</Healine>
                     <div className="mt-4 text-gray-500 dark:text-gray-400">
-                        {date &&
-                            new Date(date)
-                                .toLocaleDateString('en-US', {
-                                    weekday: 'long',
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric',
-                                })
-                                .toString()}{' － '}
-                            <span>{time} min read</span>
+                        {date && weekdayYearMonthDay(date)}
+                        {' － '}
+                        <span>{time} min read</span>
                     </div>
                 </div>
                 <Markdown content={{ __html: content }} />

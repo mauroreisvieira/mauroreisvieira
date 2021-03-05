@@ -4,6 +4,7 @@ import { Nav } from '@/layout/Nav';
 import { Healine } from '@/components/Healine';
 import { Theme } from '@/layout/Theme';
 import classNames from 'classnames';
+import { monthYear, weekdayYearMonthDay } from '@/utils/date';
 import { ABOUT } from '../api';
 
 const Curriculum = () => {
@@ -22,11 +23,6 @@ const Curriculum = () => {
         hobbies,
         life,
     } = ABOUT;
-
-    const formatDate = (date: Date) =>
-        `${new Date(date).toLocaleString('default', {
-            month: 'long',
-        })} ${new Date(date).getFullYear()}`;
 
     return (
         <>
@@ -103,14 +99,7 @@ const Curriculum = () => {
                                     Birth Date
                                 </p>
                                 <p>
-                                    {new Date(details.dateOfBirh)
-                                        .toLocaleDateString('en-US', {
-                                            weekday: 'long',
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: 'numeric',
-                                        })
-                                        .toString()}
+                                    {weekdayYearMonthDay(details.dateOfBirh)}
                                 </p>
                             </div>
                         </div>
@@ -144,10 +133,10 @@ const Curriculum = () => {
                             >
                                 <div>
                                     <p>
-                                        {formatDate(employ.start)} －{' '}
+                                        {monthYear(employ.start)} －{' '}
                                         {employ.end === 'present'
                                             ? 'present'
-                                            : formatDate(employ.end)}
+                                            : monthYear(employ.end)}
                                     </p>
                                     <p className="uppercase text-gray-500">
                                         {employ.city}
@@ -196,10 +185,10 @@ const Curriculum = () => {
                             >
                                 <div>
                                     <p>
-                                        {formatDate(educ.start)} －{' '}
+                                        {monthYear(educ.start)} －{' '}
                                         {educ.end === 'present'
                                             ? 'present'
-                                            : formatDate(educ.end)}
+                                            : monthYear(educ.end)}
                                     </p>
                                     <p className="uppercase text-gray-500">
                                         {educ.city}
@@ -341,7 +330,7 @@ const Curriculum = () => {
                                 className="mb-2 grid grid-cols-3 gap-8"
                             >
                                 <div>
-                                    <p>{formatDate(item.start)}</p>
+                                    <p>{monthYear(item.start)}</p>
                                 </div>
                                 <div className="col-span-2">
                                     <div className="mb-4">

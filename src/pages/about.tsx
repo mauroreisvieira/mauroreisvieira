@@ -4,6 +4,7 @@ import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
+import { monthYear } from '@/utils/date';
 import { ABOUT } from '../api';
 
 const About = () => {
@@ -13,11 +14,6 @@ const About = () => {
     };
 
     const { profile, employment } = ABOUT;
-
-    const formatDate = (date: Date) =>
-        `${new Date(date).toLocaleString('default', {
-            month: 'long',
-        })} ${new Date(date).getFullYear()}`;
 
     return (
         <>
@@ -62,10 +58,10 @@ const About = () => {
                                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                         />
                                     </svg>
-                                    {formatDate(employ.start)} －{' '}
+                                    {monthYear(employ.start)} －{' '}
                                     {employ.end === 'present'
                                         ? 'present'
-                                        : formatDate(employ.end)}
+                                        : monthYear(employ.end)}
                                 </span>
                             </p>
                         ))}

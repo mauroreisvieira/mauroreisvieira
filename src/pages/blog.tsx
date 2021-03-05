@@ -3,6 +3,7 @@ import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
 import { Anchor } from '@/components/Anchor';
 import { Healine } from '@/components/Healine';
+import { weekdayYearMonthDay } from '@/utils/date';
 import { getSortedPostsData, PostData } from '@/lib/docs';
 import { GetStaticPropsResult } from 'next';
 import Link from 'next/link';
@@ -32,15 +33,7 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
                         <div key={post.id} className="mb-8">
                             <div className="mb-16">
                                 <p className="text-sm mb-2 text-gray-500 dark:text-gray-400">
-                                    {new Date(post.date).toLocaleDateString(
-                                        'en-US',
-                                        {
-                                            weekday: 'long',
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: 'numeric',
-                                        }
-                                    )}
+                                    {weekdayYearMonthDay(post.date)}
                                 </p>
                                 <Link href={`/post/${post.id}`}>
                                     <Anchor className="mb-4 text-3xl font-black cursor-pointer underline">
