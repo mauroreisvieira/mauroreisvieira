@@ -21,7 +21,6 @@ export const Button = forwardRef(
             <TAG
                 {...otherProps}
                 ref={ref}
-                type="button"
                 className={classNames(
                     'inline-flex rounded-full p-3 cursor-pointer focus:outline-none dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800',
                     className
