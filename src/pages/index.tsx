@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Anchor } from '@/components/Anchor';
+import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
@@ -17,9 +18,7 @@ const Page = () => {
             </Header>
             <Theme meta={meta}>
                 <div className="text-3xl dark:text-white">
-                    <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
-                        hey folks!
-                    </h1>
+                    <Healine className="mb-12">hey folks!</Healine>
                     <div>
                         <p className="mb-8">
                             I'm a Front End Developer from Portugal.

@@ -53,9 +53,8 @@ type Skills = {
     level: number;
 };
 
-type Other = {
+type Life = {
     name: string;
-    job: string;
     start: Date;
     end: Date;
     description?: Description[];
@@ -72,7 +71,7 @@ interface About {
     skills: Skills[];
     languages: Skills[];
     hobbies: Description[];
-    other: Other[];
+    life: Life[];
 }
 
 export const ABOUT: About = {
@@ -312,10 +311,8 @@ export const ABOUT: About = {
             detail: 'I like to do DIY more related to construction.',
         },
     ],
-    other: [
+    life: [
         {
-            name: 'Version 2.0',
-            job: 'Be Father',
             start: new Date('2019-07-02'),
             end: new Date(),
             description: [

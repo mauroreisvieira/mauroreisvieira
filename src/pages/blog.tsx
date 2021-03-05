@@ -2,6 +2,7 @@ import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
 import { Anchor } from '@/components/Anchor';
+import { Healine } from '@/components/Healine';
 import { getSortedPostsData, PostData } from '@/lib/docs';
 import { GetStaticPropsResult } from 'next';
 import Link from 'next/link';
@@ -24,9 +25,9 @@ export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
             </Header>
             <Theme meta={meta}>
                 <div className="dark:text-white">
-                    <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
+                    <Healine className="mb-12">
                         blog
-                    </h1>
+                    </Healine>
                     {postsData.map((post) => (
                         <div key={post.id} className="mb-8">
                             <div className="mb-16">

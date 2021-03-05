@@ -1,3 +1,4 @@
+import { Healine } from '@/components/Healine';
 import { Anchor } from '@/components/Anchor';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
@@ -17,17 +18,15 @@ const Uses = () => {
                 <Nav />
             </Header>
             <Theme meta={meta}>
-                <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
-                    awesome things
-                </h1>
+                <Healine className="mb-12">awesome things</Healine>
                 <div className="text-xl dark:text-white">
                     <p className="mb-16">
                         Here they are, the tools I use for my workday.
                     </p>
                     <div className="mb-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            setup ⤵
-                        </h2>
+                        <Healine type="h2" className="mb-5">
+                            setup
+                        </Healine>
                         {SETUP.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
@@ -45,9 +44,9 @@ const Uses = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            development ⤵
-                        </h2>
+                        <Healine type="h2" className="mb-5">
+                            development
+                        </Healine>
                         {DEVELOPMENT.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
@@ -65,9 +64,9 @@ const Uses = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            design ⤵
-                        </h2>
+                        <Healine type="h2" className="mb-5">
+                            design
+                        </Healine>
                         {DESIGN.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
@@ -85,9 +84,9 @@ const Uses = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            productivity ⤵
-                        </h2>
+                        <Healine type="h2" className="mb-5">
+                            productivity
+                        </Healine>
                         {PRODUCTIVITY.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor
@@ -105,9 +104,9 @@ const Uses = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h2 className="font-bold text-3xl lg:text-5xl dark:text-white mb-5">
-                            hosting ⤵
-                        </h2>
+                        <Healine type="h2" className="mb-5">
+                            hosting
+                        </Healine>
                         {HOSTING.map((item) => (
                             <p key={item.name} className="mb-4 mr-4">
                                 <Anchor

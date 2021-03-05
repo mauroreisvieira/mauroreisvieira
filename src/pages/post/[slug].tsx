@@ -1,5 +1,6 @@
 import { GetStaticPropsResult } from 'next';
 import React, { useEffect, useState } from 'react';
+import { Healine } from '@/components/Healine';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
@@ -40,9 +41,7 @@ export const Slug: React.FC<DocProps> = ({
                 }}
             >
                 <div className="mb-16 text-center mx-auto">
-                    <h1 className="font-black text-6xl lg:text-8xl dark:text-white mb-12">
-                        {title}
-                    </h1>
+                    <Healine className="mb-12">{title}</Healine>
                     <div className="mt-4 text-gray-500 dark:text-gray-400">
                         {date &&
                             new Date(date)

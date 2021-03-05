@@ -1,6 +1,7 @@
 import { Anchor } from '@/components/Anchor';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
+import { Healine } from '@/components/Healine';
 import { Theme } from '@/layout/Theme';
 import classNames from 'classnames';
 import { ABOUT } from '../api';
@@ -18,8 +19,8 @@ const Curriculum = () => {
         education,
         skills,
         languages,
-        other,
         hobbies,
+        life,
     } = ABOUT;
 
     const formatDate = (date: Date) =>
@@ -42,9 +43,9 @@ const Curriculum = () => {
                         />
                     </div>
                     <div>
-                        <h1 className="font-black text-3xl dark:text-white">
+                        <Healine type="h2" className="text-3xl">
                             {details.firstName} {details.lastName}
-                        </h1>
+                        </Healine>
                         <p className="font-medium text-1xl text-brand">
                             {details.job}
                         </p>
@@ -79,7 +80,9 @@ const Curriculum = () => {
                                 <p className="uppercase font-medium mb-2">
                                     Email
                                 </p>
-                                <Anchor href={`mailto:${details.email}?subject=Hey! I saw your curriculum.`}>
+                                <Anchor
+                                    href={`mailto:${details.email}?subject=Hey! I saw your curriculum.`}
+                                >
                                     {details.email}
                                 </Anchor>
                             </div>
@@ -115,7 +118,9 @@ const Curriculum = () => {
 
                     <div className="mb-8 grid grid-cols-3 gap-8">
                         <div>
-                            <h2 className="text-xl font-bold mb-4">Profile</h2>
+                            <Healine type="h3" className="mb-4">
+                                Profile
+                            </Healine>
                         </div>
                         <div className="col-span-2 -mb-4">
                             {profile.summary.map((summary) => (
@@ -127,9 +132,9 @@ const Curriculum = () => {
                     </div>
 
                     <div className="border-t pt-4">
-                        <h2 className="text-xl font-bold mb-4">
+                        <Healine type="h3" className="mb-4">
                             Employment History
-                        </h2>
+                        </Healine>
                         {employment.map((employ, index) => (
                             // eslint-disable-next-line react/no-array-index-key
                             <div
@@ -158,7 +163,8 @@ const Curriculum = () => {
                                                 href={employ.link}
                                                 target="_blank"
                                                 rel="nofollow"
-                                                title={employ.employer}>
+                                                title={employ.employer}
+                                            >
                                                 {employ.employer}
                                             </Anchor>
                                         </p>
@@ -178,7 +184,9 @@ const Curriculum = () => {
                     </div>
 
                     <div className="mb-4 border-t pt-4 print:border-none">
-                        <h2 className="text-xl font-bold mb-4">Education</h2>
+                        <Healine type="h3" className="mb-4">
+                            Education
+                        </Healine>
                         {education.map((educ, index) => (
                             // eslint-disable-next-line react/no-array-index-key
                             <div
@@ -207,7 +215,8 @@ const Curriculum = () => {
                                                 href={educ.link}
                                                 target="_blank"
                                                 rel="nofollow"
-                                                title={educ.school}>
+                                                title={educ.school}
+                                            >
                                                 {educ.school}
                                             </Anchor>
                                         </p>
@@ -244,7 +253,9 @@ const Curriculum = () => {
 
                     <div className="grid grid-cols-3 gap-8 border-t mb-4 pt-4">
                         <div>
-                            <h2 className="text-xl font-bold mb-4">Skills</h2>
+                            <Healine type="h3" className="mb-4">
+                                Skills
+                            </Healine>
                         </div>
                         <div className="col-span-2 grid grid-cols-2 gap-2">
                             {skills.map((skill, index) => (
@@ -281,9 +292,9 @@ const Curriculum = () => {
 
                     <div className="grid grid-cols-3 gap-8 border-t mb-4 pt-4">
                         <div>
-                            <h2 className="text-xl font-bold mb-4">
+                            <Healine type="h3" className="mb-4">
                                 Languages
-                            </h2>
+                            </Healine>
                         </div>
                         <div className="col-span-2 grid grid-cols-2 gap-2">
                             {languages.map((language, index) => (
@@ -318,57 +329,54 @@ const Curriculum = () => {
                         </div>
                     </div>
 
-                    <div className="border-t pt-4">
-                        {other &&
-                            other.map((item, index) => (
+                    <div className="mb-4 border-t pt-4">
+                        <Healine type="h3" className="mb-4">
+                            Life
+                        </Healine>
+                        {life.map((item, index) => (
+                            // eslint-disable-next-line react/no-array-index-key
+                            <div
                                 // eslint-disable-next-line react/no-array-index-key
-                                <div key={index} className="mb-4">
-                                    <h2 className="text-xl font-bold mb-4">
-                                        {item.name}
-                                    </h2>
-                                    <div className="mb-2 grid grid-cols-3 gap-8">
+                                key={index}
+                                className="mb-2 grid grid-cols-3 gap-8"
+                            >
+                                <div>
+                                    <p>{formatDate(item.start)}</p>
+                                </div>
+                                <div className="col-span-2">
+                                    <div className="mb-4">
                                         <div>
-                                            <p className="mb-2">
-                                                {formatDate(item.start)}
-                                            </p>
-                                        </div>
-                                        <div className="col-span-2">
-                                            <p className="text-xl font-normal mb-4">
-                                                {item.job}
-                                            </p>
-                                            {item.description &&
-                                                item.description.map(
-                                                    (description) => (
-                                                        <p
-                                                            key={description.id}
-                                                            className="mb-2"
-                                                        >
-                                                            {description.detail}
-                                                        </p>
-                                                    )
-                                                )}
+                                            {item.description.map(
+                                                (description) => (
+                                                    <p
+                                                        className="mb-2"
+                                                        key={description.id}
+                                                    >
+                                                        {description.detail}
+                                                    </p>
+                                                )
+                                            )}
                                         </div>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                     </div>
 
-                    {hobbies && (
-                        <div className="mb-8 grid grid-cols-3 gap-8">
-                            <div>
-                                <h2 className="text-xl font-bold mb-4">
-                                    Hobbies
-                                </h2>
-                            </div>
-                            <ul className="col-span-2 list-disc list-inside">
-                                {hobbies.map((hobby) => (
-                                    <li key={hobby.id} className="mb-2">
-                                        {hobby.detail}
-                                    </li>
-                                ))}
-                            </ul>
+                    <div className="grid grid-cols-3 gap-8 pt-4 border-t">
+                        <div>
+                            <Healine type="h3" className="mb-4">
+                                Hobbies
+                            </Healine>
                         </div>
-                    )}
+                        <ul className="col-span-2 list-disc list-inside">
+                            {hobbies.map((hobby) => (
+                                <li key={hobby.id} className="mb-2">
+                                    {hobby.detail}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </Theme>
         </>
