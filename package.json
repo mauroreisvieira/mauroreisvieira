@@ -3,6 +3,7 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
+    "build:images": "repng src/images/** --out-dir static/blog/",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
