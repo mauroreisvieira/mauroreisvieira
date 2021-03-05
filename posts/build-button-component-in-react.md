@@ -1,5 +1,5 @@
 ---
-title: 'Button React Component'
+title: 'Build Button Component in React'
 description: 'React is one of the most popular JavaScript libraries for building user interfaces, in that post a will demonstrate I good practices to build a Button component.'
 date: '2021-03-05'
 ---

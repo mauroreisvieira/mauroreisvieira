@@ -14,7 +14,7 @@ export const Progress = forwardRef(
             <div
                 ref={ref}
                 {...otherProps}
-                className={classNames('h-1 flex bg-brand transition duration-300 ease-in-out', className)}
+                className={classNames('flex w-full bg-brand transition duration-75 ease-in-out', className)}
             />
         </div>
     )

@@ -1,6 +1,7 @@
 import { GetStaticPropsResult } from 'next';
 import React, { useEffect, useState } from 'react';
 import { Healine } from '@/components/Healine';
+import { Progress } from '@/components/Progress';
 import { Header } from '@/layout/Header';
 import { Nav } from '@/layout/Nav';
 import { Theme } from '@/layout/Theme';
@@ -24,14 +25,41 @@ export const Slug: React.FC<DocProps> = ({
 }: DocProps & React.PropsWithChildren<DocProps>) => {
     const { title, description, image, date, content } = postData;
     const [time, setTime] = useState<number>();
+    const [width, setWidth] = useState<number>(0);
+
+    const scrolling = (): void => {
+        const winScroll =
+            document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        setWidth(height > 0 ? scrolled / 100 : 0);
+    };
+
 
     useEffect(() => {
         const count = content.match(/\w+/g)?.length || 0;
         setTime(Math.ceil(count / 250));
     }, [content]);
 
+    useEffect(() => {
+        window.addEventListener('scroll', scrolling);
+
+        return (): void => {
+            window.removeEventListener('scroll', scrolling);
+        };
+    }, []);
+
     return (
-        <div>
+        <>
+            <Progress
+                className="h-1"
+                style={{
+                    transform: `scaleX(${width})`,
+                    transformOrigin: 'left top',
+                }}
+            />
             <Header>
                 <Nav />
             </Header>
@@ -52,7 +80,7 @@ export const Slug: React.FC<DocProps> = ({
                 </div>
                 <Markdown content={{ __html: content }} />
             </Theme>
-        </div>
+        </>
     );
 };
 
