@@ -1,6 +1,6 @@
 ---
-title: 'Vite + React + TailwindCSS'
-description: 'React is one of the most popular JavaScript libraries for building user interfaces, in that post a will demonstrate I good practices to build a Button component.'
+title: "Vite + React + TailwindCSS"
+description: "In this post I'll show you how to integrate and configure TailwindCSS in a Vite + React project."
 date: '2021-03-08'
 image: 'http://mauroreisvieira.com/public/static/og/vite-react-tailwindcss.png'
 ---
@@ -8,8 +8,6 @@ image: 'http://mauroreisvieira.com/public/static/og/vite-react-tailwindcss.png'
 [Vite](https://vitejs.dev/) is a new building tool how improve the developer experience for development with the local machine and for the build of optimized assets for production.
 
 ## Initialization Application
-
-**With NPM:**
 
 ```bash
 npm init @vitejs/app
@@ -88,7 +86,7 @@ Finally, ensure that CSS file is being imported in your `./src/App.tsx` file:
 
 ```jsx
 import React from 'react';
-import './tailwind.css'
+import './tailwind.css';
 
 function App() {
     return (
