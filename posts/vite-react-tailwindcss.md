@@ -32,7 +32,7 @@ cd vite-react-tailwindcss
 npm install
 ```
 
-Vite is installed and ready to use, let take a look in our `package.json` file.
+Vite is installed and ready to use, let take a look in your `package.json` file.
 
 Here is the default NPM scripts in a scaffolded Vite project:
 
@@ -46,13 +46,13 @@ Here is the default NPM scripts in a scaffolded Vite project:
 }
 ```
 
-Next step run our application `npm run dev`.
+Next step run application `npm run dev`.
 
-You are now able to open our application in the browse: [http://localhost:3000/](http://localhost:3000/)
+You are now able to open application in the browse: [http://localhost:3000/](http://localhost:3000/)
 
 ## TailwindCSS
 
-Let's stop out server and continue the configuration of our application.
+Let's stop out server and continue the configuration.
 
 ```bash
 npm install tailwindcss@latest postcss@latest autoprefixer@latest
@@ -68,7 +68,7 @@ npx tailwindcss init -p
 
 ### Include Tailwind in your CSS
 
-Now you have [TailwindCSS](tailwindcss.com) in our application.
+Now you have [TailwindCSS](tailwindcss.com) in application.
 
 To include them you need to create CSS file:
 
@@ -86,11 +86,25 @@ Now you need to use the `@tailwind` directive to include Tailwind's `base`, `com
 
 Finally, ensure that CSS file is being imported in your `./src/App.tsx` file:
 
-```js
-import React from 'react'
+```jsx
+import React from 'react';
 import './tailwind.css'
+
+function App() {
+    return (
+        <div>
+            <p className="text-red-500">Vite + React + TailwindCSS</p>
+        </div>
+    );
+}
+
+export default App;
 ```
+
+Application configuration are finished.
 
 Now when you run `npm run dev`, Tailwind CSS will be ready to use in your application.
 
-## React
+---
+
+If you want you can check the whole code in this [repository](https://github.com/mauroreisvieira/vite-react-tailwindcss).
