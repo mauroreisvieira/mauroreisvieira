@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Board, Card, Logo, H1 } from '../lib/image';
+import { Board, Card, Logo, H1 } from './components';
 
 export default () => (
     <Board>

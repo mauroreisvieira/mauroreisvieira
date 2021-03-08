@@ -3,6 +3,7 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
+    "images": "node src/lib/image.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
@@ -45,12 +46,14 @@
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
+    "glob": "^7.1.6",
     "husky": "^5.1.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.2.1",
     "prettier-eslint": "12.0.0",
     "prettier-eslint-cli": "5.0.0",
     "pretty-quick": "^3.1.0",
+    "repng": "^4.0.1",
     "tailwindcss": "^2.0.3",
     "typescript": "^4.1.2"
   },

@@ -2,7 +2,7 @@
 title: 'Build Button Component in React'
 description: 'React is one of the most popular JavaScript libraries for building user interfaces, in that post a will demonstrate I good practices to build a Button component.'
 date: '2021-03-05'
-image: 'http://mauroreisvieira.com/static/blog/build-button-component-in-react.png'
+image: 'http://mauroreisvieira.com/static/blog/og/build-button-component-in-react.png'
 ---
 
 There are many ways to create a `Button` component in React.\
