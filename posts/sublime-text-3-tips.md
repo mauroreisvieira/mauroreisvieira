@@ -2,7 +2,7 @@
 title: 'Sublime Text 3 Tips'
 description: "I've been using Sublime Text 3 for probably four years now and in that time I've discovered tons of useful tricks. I figured I should start writing them down for anyone who might be interested. I'll try to explain the bits that seem esoteric because there are a lot of cool commands which only work in certain contexts."
 date: '2019-04-16'
-image: 'http://mauroreisvieira.com/static/blog/og/sublime-text-3-tips.png'
+image: 'http://mauroreisvieira.com/public/static/og/sublime-text-3-tips.png'
 ---
 
 I've been using Sublime Text 3 for probably five years now and in that time I've discovered tons of useful tricks.

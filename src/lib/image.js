@@ -13,14 +13,14 @@ const run = async (Component, opts) => {
     file.write(image);
 };
 
-glob('src/images/*.js', function (_, files) {
+glob('src/og/*.js', function (_, files) {
     files.forEach((file) => {
         const filename = path.basename(file, path.extname(file));
         const filepath = path.join(__dirname, `../../${file}`);
         const Component = require(filepath).default || require(filepath);
 
         run(Component, {
-            outDir: 'static/blog/og',
+            outDir: 'public/static/og',
             filename: `${filename}.png`,
         });
     });

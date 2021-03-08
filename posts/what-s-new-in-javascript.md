@@ -2,7 +2,7 @@
 title: "What's new in Javascript?"
 description: "Many of us know that there is a standard procedure for Javascript latest releases and a committee behind that. In this post, I will explain about who makes the final call on any new specification, what is the procedure for it, and what's new in ES2019."
 date: '2019-05-21'
-image: 'http://mauroreisvieira.com/static/blog/og/what-s-new-in-javascript.png'
+image: 'http://mauroreisvieira.com/public/static/og/what-s-new-in-javascript.png'
 ---
 
 Some of the new features are still proposal, so if you are playing with the code Some of the new features are still proposal, so if you are playing with the code, try to use **Google Chrome**.

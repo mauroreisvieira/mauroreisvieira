@@ -2,6 +2,10 @@
 @tailwind utilities;
 
 @layer components {
+    .prose a {
+        @apply text-brand hover:text-brand-light underline focus:outline-none;
+    }
+
     .prose code {
         @apply text-brand-dark font-mono;
     }
