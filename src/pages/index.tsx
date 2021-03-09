@@ -38,7 +38,7 @@ const Page = () => {
                             Also I sharing everything I know in my{' '}
                             <Link href="/blog">
                                 <Anchor>blog</Anchor>
-                            </Link>{' '}.
+                            </Link>.
                         </p>
                         <p className="mb-12">
                             If you are interested to know more about me you can
