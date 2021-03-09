@@ -15,13 +15,14 @@ const run = async (Component, opts) => {
 
 glob('src/og/*.js', function (_, files) {
     files.forEach((file) => {
-        const filename = path.basename(file, path.extname(file));
+        const outDir = 'public/static/og';
+        const filename = `${path.basename(file, path.extname(file))}.png`;
         const filepath = path.join(__dirname, `../../${file}`);
         const Component = require(filepath).default || require(filepath);
 
         run(Component, {
-            outDir: 'public/static/og',
-            filename: `${filename}.png`,
+            outDir,
+            filename,
         });
     });
 });
