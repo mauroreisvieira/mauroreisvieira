@@ -40,8 +40,10 @@ const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:title" content={meta.title} />
             <meta name="twitter:description" content={meta.description} />
             <meta name="theme-color" content="#000000" />
+            <meta name="msapplication-tap-highlight" content="no" />
+            <link rel="manifest" href="manifest.json" />
             <meta name="robots" content="follow, index" />
-            <link href="/favicon.ico" rel="shortcut icon" />
+            <link href="static/favicon.ico" rel="shortcut icon" />
         </Head>
         <div
             className={classNames(
