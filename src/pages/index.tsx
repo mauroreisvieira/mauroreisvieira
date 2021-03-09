@@ -37,8 +37,8 @@ const Page = () => {
                         <p className="mb-12">
                             Also I sharing everything I know in my{' '}
                             <Link href="/blog">
-                                <Anchor>blog</Anchor>.
-                            </Link>{' '}
+                                <Anchor>blog</Anchor>
+                            </Link>{' '}.
                         </p>
                         <p className="mb-12">
                             If you are interested to know more about me you can
