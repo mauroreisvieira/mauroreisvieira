@@ -1,13 +1,16 @@
-import Anchor from '@/components/Anchor';
-import Header from '@/layout/Header';
-import Nav from '@/layout/Nav';
-import Healine from '@/components/Healine';
-import Theme from '@/layout/Theme';
-import classNames from 'classnames';
-import { monthYear, weekdayYearMonthDay } from '@/utils/date';
 import { ABOUT } from '@/api/about';
+import { monthYear, weekdayYearMonthDay } from '@/utils/date';
+import classNames from 'classnames';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
-const Curriculum = () => {
+const Anchor = dynamic(() => import('@/components/Anchor'));
+const Healine = dynamic(() => import('@/components/Healine'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
+
+const Curriculum = (): React.ReactElement => {
     const meta = {
         title: 'Curriculum | Mauro Reis Vieira',
         description: 'Curriculum | Mauro Reis Vieira',
@@ -98,9 +101,7 @@ const Curriculum = () => {
                                 <p className="uppercase font-medium mb-2">
                                     Birth Date
                                 </p>
-                                <p>
-                                    {weekdayYearMonthDay(details.dateOfBirh)}
-                                </p>
+                                <p>{weekdayYearMonthDay(details.dateOfBirh)}</p>
                             </div>
                         </div>
                     </div>

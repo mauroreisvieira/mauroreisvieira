@@ -1,19 +1,23 @@
-import Anchor from '@/components/Anchor';
-import Healine from '@/components/Healine';
-import Header from '@/layout/Header';
-import Nav from '@/layout/Nav';
-import Theme from '@/layout/Theme';
 import { getSortedPostsData, PostData } from '@/lib/docs';
 import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React from 'react';
+
+const Anchor = dynamic(() => import('@/components/Anchor'));
+const Healine = dynamic(() => import('@/components/Healine'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
 
 interface BlogProps {
     postsData: PostData[];
 }
 
-export const Blog: React.FC<BlogProps> = ({ postsData }: BlogProps) => {
+export const Blog: React.FC<BlogProps> = ({
+    postsData,
+}: BlogProps): React.ReactElement => {
     const meta = {
         title: 'Blog | Mauro Reis Vieira',
         description: 'Blog | Mauro Reis Vieira',

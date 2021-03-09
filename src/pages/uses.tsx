@@ -1,11 +1,14 @@
 import { DESIGN, DEVELOPMENT, HOSTING, PRODUCTIVITY, SETUP } from '@/api/uses';
-import Anchor from '@/components/Anchor';
-import Healine from '@/components/Healine';
-import Header from '@/layout/Header';
-import Nav from '@/layout/Nav';
-import Theme from '@/layout/Theme';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
-const Uses = () => {
+const Anchor = dynamic(() => import('@/components/Anchor'));
+const Healine = dynamic(() => import('@/components/Healine'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
+
+const Uses = (): React.ReactElement => {
     const meta = {
         title: 'Uses | Mauro Reis Vieira',
         description: 'Uses | Mauro Reis Vieira',

@@ -1,14 +1,15 @@
-import Anchor from '@/components/Anchor';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import React from 'react';
 
+const Anchor = dynamic(() => import('@/components/Anchor'));
 const Healine = dynamic(() => import('@/components/Healine'));
 const Theme = dynamic(() => import('@/layout/Theme'));
 const Nav = dynamic(() => import('@/layout/Nav'));
 const Header = dynamic(() => import('@/layout/Header'));
 const Social = dynamic(() => import('@/layout/Social'));
 
-const Page = () => {
+const Page = (): React.ReactElement => {
     const meta = {
         title: 'Mauro Reis Vieira',
         description: 'Mauro Reis Vieira',

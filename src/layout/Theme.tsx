@@ -43,7 +43,7 @@ const Theme: React.FC<ThemeProps> = ({
             <meta name="msapplication-tap-highlight" content="no" />
             <link rel="manifest" href="/manifest.json" />
             <meta name="robots" content="follow, index" />
-            <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png" />
+            <link rel="icon" sizes="192x192" href="static/touch/chrome-touch-icon-192x192.png" />
         </Head>
         <div
             className={classNames(

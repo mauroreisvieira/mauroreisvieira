@@ -11,11 +11,11 @@ I figured I should start writing them down for anyone who might be interested.
 
 I'll try to explain the bits that seem esoteric because there are a lot of cool commands which only work in certain contexts.
 
-### Package Control
+**Package Control**
 
 Package Control makes it extremely easy to manage your Sublime packages. Also helps with discovering new ones, which is nice.
 
-### Goto Anything...
+**Goto Anything...**
 
 So you want to fly around your project super fast? Then the shortcut you want is `CMD+P`.\
 Once you've opened the dialog try typing a filename.
@@ -28,7 +28,7 @@ One last trick. If instead of an `@` you preface things with an : you can type a
 
 There are other keyboard shortcuts for jumping to a line and going to a symbol but why bother when you can just use `CMD+P` and some easy prefixing.
 
-### Selections
+**Selections**
 
 There are some neat selections which come in handy depending on your context.\
 Personally I use Expand Selection to Tag, `CMD+SHIFT+A` quite frequently when writing HTML.

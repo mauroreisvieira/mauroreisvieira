@@ -1,14 +1,16 @@
-import Healine from '@/components/Healine';
-import Progress from '@/components/Progress';
-import Header from '@/layout/Header';
-import Markdown from '@/layout/Markdown';
-import Nav from '@/layout/Nav';
-import Theme from '@/layout/Theme';
 import { getPost, getSortedPostsData, PostData } from '@/lib/docs';
 import markdownToHtml from '@/lib/markdown';
 import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';
+import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
+
+const Progress = dynamic(() => import('@/components/Progress'));
+const Healine = dynamic(() => import('@/components/Healine'));
+const Markdown = dynamic(() => import('@/layout/Markdown'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
 
 interface Params {
     params: {
@@ -22,7 +24,7 @@ interface DocProps {
 
 export const Slug: React.FC<DocProps> = ({
     postData,
-}: DocProps & React.PropsWithChildren<DocProps>) => {
+}: DocProps & React.PropsWithChildren<DocProps>): React.ReactElement => {
     const { title, description, image, date, content } = postData;
     const [time, setTime] = useState<number>();
     const [width, setWidth] = useState<number>(0);
@@ -71,7 +73,7 @@ export const Slug: React.FC<DocProps> = ({
             >
                 <div className="mb-16 text-center mx-auto">
                     <Healine className="mb-12">{title}</Healine>
-                    <div className="mt-4 text-gray-500 dark:text-gray-400">
+                    <div className="mt-4 text-gray-500">
                         {date && weekdayYearMonthDay(date)}
                         {' － '}
                         <span>{time} min read</span>

@@ -1,12 +1,15 @@
 import { ABOUT } from '@/api/about';
-import Anchor from '@/components/Anchor';
-import Healine from '@/components/Healine';
-import Header from '@/layout/Header';
-import Nav from '@/layout/Nav';
-import Theme from '@/layout/Theme';
 import { monthYear } from '@/utils/date';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
-const About = () => {
+const Anchor = dynamic(() => import('@/components/Anchor'));
+const Healine = dynamic(() => import('@/components/Healine'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
+
+const About = (): React.ReactElement => {
     const meta = {
         title: 'About Me | Mauro Reis Vieira',
         description: 'About Me | Mauro Reis Vieira',
@@ -43,7 +46,7 @@ const About = () => {
                                 >
                                     {employ.employer}
                                 </Anchor>
-                                <span className="flex items-center text-base text-gray-400 dark:text-white">
+                                <span className="flex items-center text-base text-gray-500">
                                     <svg
                                         className="w-4 h-4 mr-2"
                                         fill="none"
