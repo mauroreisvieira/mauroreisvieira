@@ -5,8 +5,8 @@ const render = require('repng');
 
 const run = async (Component, opts) => {
     const image = await render(Component, opts);
-    if (!fs.existsSync(opts.outDir)){
-        fs.mkdirSync(opts.outDir);
+    if (!fs.existsSync(opts.outDir)) {
+        fs.mkdirSync(opts.outDir, { recursive: true });
     }
     const outPath = path.join(opts.outDir, opts.filename);
     const file = fs.createWriteStream(outPath);
