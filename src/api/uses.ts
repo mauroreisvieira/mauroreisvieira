@@ -61,7 +61,7 @@ export const DEVELOPMENT: Uses[] = [
     {
         name: 'GitHub',
         link: 'https://github.com',
-        description: 'I switched from Bitbucket to GitHub as soon as they made the possibility of having free repositories available.'
+        description: 'I switched from Bitbucket to GitHub as soon as they made the possibility of having free private repositories available.'
     },
 ];
 
