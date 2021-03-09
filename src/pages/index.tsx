@@ -25,18 +25,18 @@ const Page = () => {
                         </p>
                         <p className="mb-8">
                             You can read more{' '}
-                            <Link href="/about">
+                            <Link href="/about" passHref>
                                 <Anchor>about me</Anchor>
                             </Link>{' '}
                             or you can check what{' '}
-                            <Link href="/uses">
+                            <Link href="/uses" passHref>
                                 <Anchor>awesome things</Anchor>
                             </Link>{' '}
                             I use on my normal workday.
                         </p>
                         <p className="mb-12">
                             Also I sharing everything I know in my{' '}
-                            <Link href="/blog">
+                            <Link href="/blog" passHref>
                                 <Anchor>blog</Anchor>
                             </Link>.
                         </p>
