@@ -12,10 +12,12 @@ Many developers create a `Button` component that way:
 
 ```tsx
 type Props = {
-  children: React.ReactNode;
+  size: 'sm' | 'md' | 'lg';
+  children: string;
 };
 
 function Button({
+  size,
   children
 }: Props): JSX.Element => (
   ...
@@ -26,22 +28,26 @@ export default Button;
 
 Firstly there is not only a correct way to build a component.
 
-But... with that approach, looking as consumer, we can saw some limitations, such as are **NOT allowed** to use native attributes.
+But... with that approach, looking as consumer I can see some limitations, such as are **NOT allowed** to use native attributes.
 
-For instance if we want to use `onClick` or a simple `role` is not possible.
+For instance if we want to use `onClick`, `type` or a simple `role` is not possible.
+
+Another problem is with type `string` in prop `children`.
+That will not allow a possibility of having other component or a simple icon inside a `button`.
 
 **Let's change that...**
 
 ```tsx
 type NativeButton = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export interface ButtonProps extends NativeButton {
-    children: React.ReactNode;
+    size: 'sm' | 'md' | 'lg';
 }
 
 export const Button: React.FC<ButtonProps> = ({
+  size,
   children,
   ...otherProps
-}: ButtonProps): React.ReactElement => (
+}: ButtonProps & React.PropsWithChildren<ButtonProps>): React.ReactElement => (
     <button {...otherProps} type="button">
         {children}
     </button>
@@ -51,4 +57,4 @@ export const Button: React.FC<ButtonProps> = ({
 export default Button;
 ```
 
-Now our component allow us to use all the attributes of native`<button>`.
+Now our component allow us to use all the attributes of native`<button>` and also to use an simple text or other component inside.
