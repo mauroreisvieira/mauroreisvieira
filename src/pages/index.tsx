@@ -35,6 +35,12 @@ const Page = () => {
                             I use on my normal workday.
                         </p>
                         <p className="mb-12">
+                            Also I sharing everything I know in my{' '}
+                            <Link href="/blog">
+                                <Anchor>blog</Anchor>.
+                            </Link>{' '}
+                        </p>
+                        <p className="mb-12">
                             If you are interested to know more about me you can
                             also follow me.
                         </p>
