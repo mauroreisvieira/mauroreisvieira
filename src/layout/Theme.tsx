@@ -41,9 +41,9 @@ const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:description" content={meta.description} />
             <meta name="theme-color" content="#000000" />
             <meta name="msapplication-tap-highlight" content="no" />
-            <link rel="manifest" href="manifest.json" />
+            <link rel="manifest" href="/manifest.json" />
             <meta name="robots" content="follow, index" />
-            <link href="static/favicon.ico" rel="shortcut icon" />
+            <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png" />
         </Head>
         <div
             className={classNames(

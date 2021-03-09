@@ -1,10 +1,12 @@
 import Anchor from '@/components/Anchor';
-import Healine from '@/components/Healine';
-import Header from '@/layout/Header';
-import Nav from '@/layout/Nav';
-import Social from '@/layout/Social';
-import Theme from '@/layout/Theme';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+
+const Healine = dynamic(() => import('@/components/Healine'));
+const Theme = dynamic(() => import('@/layout/Theme'));
+const Nav = dynamic(() => import('@/layout/Nav'));
+const Header = dynamic(() => import('@/layout/Header'));
+const Social = dynamic(() => import('@/layout/Social'));
 
 const Page = () => {
     const meta = {
@@ -38,7 +40,8 @@ const Page = () => {
                             Also I sharing everything I know in my{' '}
                             <Link href="/blog" passHref>
                                 <Anchor>blog</Anchor>
-                            </Link>.
+                            </Link>
+                            .
                         </p>
                         <p className="mb-12">
                             If you are interested to know more about me you can
