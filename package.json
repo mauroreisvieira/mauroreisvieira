@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next",
-    "build": "npm run images && next build && next export",
+    "build": "npm run images && next build && next export -o docs/",
     "start": "next start",
     "images": "node src/lib/image.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
