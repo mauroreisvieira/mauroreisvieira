@@ -30,7 +30,7 @@ But... with that approach, looking as consumer, we can saw some limitations, suc
 
 For instance if we want to use `onClick` or a simple `role` is not possible.
 
-### Let changes that...
+### Let's change that...
 
 ```tsx
 type NativeButton = React.ButtonHTMLAttributes<HTMLButtonElement>;

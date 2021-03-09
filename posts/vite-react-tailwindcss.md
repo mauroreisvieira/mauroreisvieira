@@ -50,7 +50,7 @@ You are now able to open application in the browse: [http://localhost:3000/](htt
 
 ## TailwindCSS
 
-Let's stop out server and continue the configuration.
+Let's stop server and continue the configuration.
 
 ```bash
 npm install tailwindcss@latest postcss@latest autoprefixer@latest
