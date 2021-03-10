@@ -11,10 +11,14 @@ export interface Post {
     image?: string;
 };
 
+export interface Mdx extends Omit<Post, 'content'> {
+    source: any;
+};
+
 const postsDirectory = path.join(process.cwd(), 'posts');
 
 export const getPost = (id: string, includeContent = false): Post => {
-    const fullPath = path.join(postsDirectory, `${id}.md`);
+    const fullPath = path.join(postsDirectory, `${id}.mdx`);
     return getPostFromFile(fullPath, id, includeContent);
 };
 
@@ -23,7 +27,7 @@ export const getSortedPostsData = (): Post[] => {
     const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData: Post[] = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
-        const id = fileName.replace(/\.md$/, '');
+        const id = fileName.replace(/\.mdx$/, '');
 
         // Read markdown file as string
         const fullPath = path.join(postsDirectory, fileName);
@@ -47,7 +51,6 @@ const getPostFromFile = (
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
-    // Combine the data with the id
     return {
         id,
         ...matterResult.data,

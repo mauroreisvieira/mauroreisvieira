@@ -1,7 +1,11 @@
-import { getPost, getSortedPostsData, Post } from '@/lib/docs';
-import markdownToHtml from '@/lib/markdown';
+import MDXComponents from '@/components/MDXComponents';
+import { getPost, getSortedPostsData, Mdx } from '@/lib/docs';
 import { weekdayYearMonthDay } from '@/utils/date';
+// @ts-ignore
+import mdxPrism from 'mdx-prism';
 import { GetStaticPropsResult } from 'next';
+import hydrate from 'next-mdx-remote/hydrate';
+import renderToString from 'next-mdx-remote/render-to-string';
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 
@@ -19,15 +23,19 @@ interface Params {
 }
 
 interface DocProps {
-    postData: Post;
+    postData: Mdx;
 }
 
 export const Slug: React.FC<DocProps> = ({
     postData,
 }: DocProps & React.PropsWithChildren<DocProps>): React.ReactElement => {
-    const { title, description, image, date, content } = postData;
+    const { title, description, image, date, source } = postData;
     const [time, setTime] = useState<number>();
     const [width, setWidth] = useState<number>(0);
+
+    const content = hydrate(source, {
+        components: MDXComponents,
+    });
 
     const scrolling = (): void => {
         const winScroll =
@@ -40,9 +48,9 @@ export const Slug: React.FC<DocProps> = ({
     };
 
     useEffect(() => {
-        const count = content.match(/\w+/g)?.length || 0;
-        setTime(Math.ceil(count / 250));
-    }, [content]);
+        // const count = content.match(/\w+/g)?.length || 0;
+        setTime(Math.ceil(10000 / 250));
+    }, [source]);
 
     useEffect(() => {
         window.addEventListener('scroll', scrolling);
@@ -79,7 +87,7 @@ export const Slug: React.FC<DocProps> = ({
                         <span>{time} min read</span>
                     </div>
                 </div>
-                <Markdown content={{ __html: content }} />
+                <Markdown>{content}</Markdown>
             </Theme>
         </>
     );
@@ -87,14 +95,29 @@ export const Slug: React.FC<DocProps> = ({
 
 export const getStaticProps = async ({
     params,
-}: Params): Promise<GetStaticPropsResult<{ postData: Post }>> => {
+}: Params): Promise<GetStaticPropsResult<{ postData: Mdx }>> => {
     const { slug } = params;
     const { content, ...rest } = getPost(slug, true);
-    const markdown = await markdownToHtml(content || '');
+
+    const mdxSource = await renderToString(content, {
+        components: MDXComponents,
+        mdxOptions: {
+            remarkPlugins: [
+                // eslint-disable-next-line global-require
+                require('remark-autolink-headings'),
+                // eslint-disable-next-line global-require
+                require('remark-slug'),
+                // eslint-disable-next-line global-require
+                require('remark-code-titles'),
+            ],
+            rehypePlugins: [mdxPrism],
+        },
+    });
+
     return {
         props: {
             postData: {
-                content: markdown,
+                source: mdxSource,
                 ...rest,
             },
         },

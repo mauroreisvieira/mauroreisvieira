@@ -1,21 +1,23 @@
+import classNames from 'classnames';
 import React from 'react';
 
-type DangerouslySetInnerHTML = {
-    __html: string;
-};
-
 interface MarkdownProps {
-    content: DangerouslySetInnerHTML;
+    className?: string;
 }
 
 const Markdown: React.FC<MarkdownProps> = ({
-    content,
-}: MarkdownProps): React.ReactElement => (
+    className,
+    children,
+}: MarkdownProps &
+    React.PropsWithChildren<MarkdownProps>): React.ReactElement => (
     <article
-        className="prose prose-xl dark:prose-light mx-auto"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={content}
-    />
+        className={classNames(
+            'prose prose-xl dark:prose-light mx-auto',
+            className
+        )}
+    >
+        {children}
+    </article>
 );
 
 export default Markdown;
