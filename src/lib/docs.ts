@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-export interface PostData {
+export interface Post {
     id: string;
     title: string;
     description: string;
@@ -13,15 +13,15 @@ export interface PostData {
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export const getPost = (id: string, includeContent = false): PostData => {
+export const getPost = (id: string, includeContent = false): Post => {
     const fullPath = path.join(postsDirectory, `${id}.md`);
     return getPostFromFile(fullPath, id, includeContent);
 };
 
-export const getSortedPostsData = (): PostData[] => {
+export const getSortedPostsData = (): Post[] => {
     // Get file names under /posts
     const fileNames = fs.readdirSync(postsDirectory);
-    const allPostsData: PostData[] = fileNames.map((fileName) => {
+    const allPostsData: Post[] = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
         const id = fileName.replace(/\.md$/, '');
 
@@ -42,7 +42,7 @@ const getPostFromFile = (
     fullPath: string,
     id: string,
     includeContent = false
-): PostData => {
+): Post => {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
@@ -52,5 +52,5 @@ const getPostFromFile = (
         id,
         ...matterResult.data,
         content: includeContent ? matterResult.content : null,
-    } as PostData;
+    } as Post;
 };

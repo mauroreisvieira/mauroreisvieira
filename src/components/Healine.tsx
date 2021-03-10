@@ -7,19 +7,17 @@ type HealineSizes = {
     };
 };
 
-type HealineType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
-
 interface HealineProps {
-    type?: HealineType;
+    type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
     className?: string;
-    children: React.ReactNode;
 }
 
-const Healine = ({
+const Healine: React.FC<HealineProps> = ({
     type = 'h1',
     className,
     children,
-}: HealineProps): React.ReactElement => {
+}: HealineProps &
+    React.PropsWithChildren<HealineProps>): React.ReactElement => {
     const SIZES: HealineSizes = {
         h1: {
             size: 'text-6xl lg:text-8xl',

@@ -1,4 +1,4 @@
-import { getPost, getSortedPostsData, PostData } from '@/lib/docs';
+import { getPost, getSortedPostsData, Post } from '@/lib/docs';
 import markdownToHtml from '@/lib/markdown';
 import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';
@@ -19,7 +19,7 @@ interface Params {
 }
 
 interface DocProps {
-    postData: PostData;
+    postData: Post;
 }
 
 export const Slug: React.FC<DocProps> = ({
@@ -87,7 +87,7 @@ export const Slug: React.FC<DocProps> = ({
 
 export const getStaticProps = async ({
     params,
-}: Params): Promise<GetStaticPropsResult<{ postData: PostData }>> => {
+}: Params): Promise<GetStaticPropsResult<{ postData: Post }>> => {
     const { slug } = params;
     const { content, ...rest } = getPost(slug, true);
     const markdown = await markdownToHtml(content || '');

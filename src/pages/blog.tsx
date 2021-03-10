@@ -1,4 +1,4 @@
-import { getSortedPostsData, PostData } from '@/lib/docs';
+import { getSortedPostsData, Post } from '@/lib/docs';
 import { weekdayYearMonthDay } from '@/utils/date';
 import { GetStaticPropsResult } from 'next';
 import dynamic from 'next/dynamic';
@@ -12,7 +12,7 @@ const Nav = dynamic(() => import('@/layout/Nav'));
 const Header = dynamic(() => import('@/layout/Header'));
 
 interface BlogProps {
-    postsData: PostData[];
+    postsData: Post[];
 }
 
 export const Blog: React.FC<BlogProps> = ({
@@ -54,7 +54,7 @@ export const Blog: React.FC<BlogProps> = ({
 
 export const getStaticProps = async (): Promise<
     GetStaticPropsResult<{
-        postsData: PostData[];
+        postsData: Post[];
     }>
 > => {
     const postsData = getSortedPostsData();
