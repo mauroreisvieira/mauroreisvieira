@@ -2,8 +2,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "export": "next export",
+    "build": "next build && next export",
     "start": "next start",
     "images": "node src/lib/image.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
