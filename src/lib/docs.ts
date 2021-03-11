@@ -11,7 +11,7 @@ export interface Post {
     image?: string;
 };
 
-export interface Mdx extends Omit<Post, 'content'> {
+export interface Mdx extends Post {
     source: any;
 };
 

@@ -29,11 +29,11 @@ interface DocProps {
 export const Slug: React.FC<DocProps> = ({
     postData,
 }: DocProps & React.PropsWithChildren<DocProps>): React.ReactElement => {
-    const { title, description, image, date, source } = postData;
+    const { title, description, image, date, content, source } = postData;
     const [time, setTime] = useState<number>();
     const [width, setWidth] = useState<number>(0);
 
-    const content = hydrate(source, {
+    const children = hydrate(source, {
         components: MDXComponents,
     });
 
@@ -48,9 +48,9 @@ export const Slug: React.FC<DocProps> = ({
     };
 
     useEffect(() => {
-        // const count = content.match(/\w+/g)?.length || 0;
-        setTime(Math.ceil(10000 / 250));
-    }, [source]);
+        const count = content.match(/\w+/g)?.length || 0;
+        setTime(Math.ceil(count / 250));
+    }, [content]);
 
     useEffect(() => {
         window.addEventListener('scroll', scrolling);
@@ -87,7 +87,7 @@ export const Slug: React.FC<DocProps> = ({
                         <span>{time} min read</span>
                     </div>
                 </div>
-                <Markdown>{content}</Markdown>
+                <Markdown>{children}</Markdown>
             </Theme>
         </>
     );
@@ -118,6 +118,7 @@ export const getStaticProps = async ({
         props: {
             postData: {
                 source: mdxSource,
+                content,
                 ...rest,
             },
         },

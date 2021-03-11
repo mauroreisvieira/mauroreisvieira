@@ -20,14 +20,14 @@ const Healine: React.FC<HealineProps> = ({
     React.PropsWithChildren<HealineProps>): React.ReactElement => {
     const SIZES: HealineSizes = {
         h1: {
-            size: 'text-6xl lg:text-8xl',
+            size: 'text-7xl lg:text-8xl',
         },
         h2: {
-            size: 'text-3xl lg:text-5xl',
+            size: 'text-5xl lg:text-6xl',
         },
         h3: {
-            size: 'text-xl',
-        },
+            size: 'text-2xl lg:text-3xl ',
+        }
     };
 
     const TAG = type;
