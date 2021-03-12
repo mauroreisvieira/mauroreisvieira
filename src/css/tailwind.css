@@ -7,7 +7,7 @@
     }
 
     .prose code {
-        @apply text-brand-dark font-mono;
+        @apply text-violet-600 font-mono;
     }
 }
 

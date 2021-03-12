@@ -28,6 +28,7 @@ module.exports = {
                     DEFAULT: '#e91e63',
                     dark: '#da2160',
                 },
+                violet: colors.violet,
             },
             typography: (theme) => ({
                 light: {

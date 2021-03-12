@@ -49,7 +49,7 @@ export const Slug: React.FC<DocProps> = ({
 
     useEffect(() => {
         const count = content.match(/\w+/g)?.length || 0;
-        setTime(Math.ceil(count / 250));
+        setTime(Math.ceil(count / 200));
     }, [content]);
 
     useEffect(() => {

@@ -1,0 +1,112 @@
+---
+title: 'React 17.0'
+description: 'React 17.0 was release with no new developer-facing features, instead React team decided to focused on making it easier to upgrade React itself.'
+date: '2021-03-12'
+image: 'https://mauroreisvieira.com/static/og/react-17.0.png'
+---
+
+React team are actively working on the new React features, but that was not the main focus of this latest version.
+The launch of React 17 was a fundamental part of the strategy to implement them without leaving anyone behind.
+
+## Gradual Upgrades
+
+In previous versions React updates had to be **"all-or-nothing"**.
+Either we chose to stay with an old version or update to a new version.
+
+**React 17 allows for gradual React updates.**
+
+So when you upgrade from React 16 to React 17 you will usually update your entire application at once, but it can become increasingly challenging if a code base was written old or not receive actively updates.
+
+React 17 will fix that problems, this means that when React 18 and next's versions, will have an option to update entire application at once or update piece by piece.
+
+If you may decide to migrate most of your application to React 18, but keep some piece loaded slowly or sub-routing in React 17 will work without any problems.
+
+## Deprecated functions
+
+React decided to deprecate some of the lifecycle methods with React 17.
+
+Reason they decide removed some methods was related with original lifecycle model was not intended for some of the upcoming features like async rendering.
+With the introduction of async rendering, some of these lifecycle methods will be unsafe if used.
+
+More details of that you can [read post](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html) created by React team.
+
+In version 17.0 we saw deprecation warnings, related with some renamed functions, that will be removed in next MAJOR version.
+
+-   `componentWillMount` renamed to `UNSAFE_componentWillMount`
+-   `componentWillReceiveProps` renamed to `UNSAFE_componentWillReceiveProps`
+-   `componentWillUpdate` renamed to `UNSAFE_componentWillUpdate`
+
+## New Lifecycle Methods
+
+### getDerivedStateFromProps
+
+The new static `getDerivedStateFromProps` lifecycle is invoked after a component is instantiated as well as before it is re-rendered.
+It can return an object to update state, or null to indicate that the new props do not require any state updates.
+
+<Alert skin="warning">
+    Both the older <code>componentWillReceiveProps</code> and the new
+    <code>getDerivedStateFromProps</code> methods add significant complexity to components.
+</Alert>
+
+```jsx
+class Example extends React.Component {
+    static getDerivedStateFromProps(props, state) {
+        // ...
+    }
+}
+```
+
+### getSnapshotBeforeUpdate
+
+Lifecycle function is called right before mutations are made (e.g. before the DOM is updated).
+The return value for this lifecycle will be passed as the 3ª parameter to `componentDidUpdate`.
+
+```jsx
+class Example extends React.Component {
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        // ...
+    }
+}
+```
+
+<Alert skin="info">
+    This lifecycle isn’t often needed, but can be useful in cases like manually
+    preserving scroll position during rerenders.
+</Alert>
+
+### React 17 Class Example
+
+```jsx
+class Example extends React.Component {
+    // set initial state
+    constructor() {}
+
+    // use to increasing performance
+    shouldComponentUpdate(nextProps, nextState, nextContext) {}
+
+    // cause side effects (AJAX calls etc.)
+    componentDidUpdate(prevProps, prevState, snapshot) {}
+
+    // cause side effects (AJAX calls etc.)
+    componentDidMount() {}
+
+    // remove listeners/timers created
+    componentWillUnmount() {}
+
+    // create elements that will be render in DOM.
+    render() {}
+}
+```
+
+## Event Delegation
+
+The other great feature as related with **Event Delegation** that will no longer attach event handlers at the `document` level.
+Instead it will attach them to the root DOM container into which your React tree is rendered.
+
+So React 16 and earlier, React would do `document.addEventListener()` for most events.
+React 17 will call `rootNode.addEventListener()` under the hood instead.
+
+## Conclusion
+
+There wasn’t a big change between version 16.8 and version 17.0, was **zero new features**.
+What we had in the React 17 major release as new features that will redefine how React applications are built.
