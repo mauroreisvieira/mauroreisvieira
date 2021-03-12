@@ -38,6 +38,7 @@ const Theme: React.FC<ThemeProps> = ({
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@mauroreisvieira" />
             <meta name="twitter:title" content={meta.title} />
+            <meta name="twitter:image" content={meta.image} />
             <meta name="twitter:description" content={meta.description} />
             <meta name="theme-color" content="#000000" />
             <meta name="msapplication-tap-highlight" content="no" />
