@@ -1,7 +1,7 @@
 ---
 title: 'React 17.0'
 description: 'React 17.0 was release with no new developer-facing features, instead React team decided to focused on making it easier to upgrade React itself.'
-date: '2021-03-12'
+date: '2021-03-13'
 image: 'https://mauroreisvieira.com/static/og/react-17.0.png'
 ---
 
@@ -36,6 +36,18 @@ In version 17.0 we saw deprecation warnings, related with some renamed functions
 -   `componentWillReceiveProps` renamed to `UNSAFE_componentWillReceiveProps`
 -   `componentWillUpdate` renamed to `UNSAFE_componentWillUpdate`
 
+<Alert skin="warning">
+    Old functions names will continue to work until version 17.0, use the{' '}
+    <Anchor
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles"
+    >
+        rename-unsafe-lifecycles codemod
+    </Anchor>{' '}
+    to automatically update your components.
+</Alert>
+
 ## New Lifecycle Methods
 
 ### getDerivedStateFromProps
@@ -58,7 +70,7 @@ class Example extends React.Component {
 
 ### getSnapshotBeforeUpdate
 
-Lifecycle function is called right before mutations are made (e.g. before the DOM is updated).
+Lifecycle function is called right before mutations are made (before the DOM is updated).
 The return value for this lifecycle will be passed as the 3ª parameter to `componentDidUpdate`.
 
 ```jsx
@@ -70,8 +82,8 @@ class Example extends React.Component {
 ```
 
 <Alert skin="info">
-    This lifecycle isn’t often needed, but can be useful in cases like manually
-    preserving scroll position during rerenders.
+    This lifecycle isn't often needed, but can be useful in cases like manually
+    preserving scroll position during re-renders.
 </Alert>
 
 ### React 17 Class Example
@@ -81,8 +93,17 @@ class Example extends React.Component {
     // set initial state
     constructor() {}
 
+    // update state via this.setState
+    UNSAFE_componentWillMount() {}
+
+    // sync state to props
+    UNSAFE_componentWillReceiveProps(nextProps) {}
+
     // use to increasing performance
     shouldComponentUpdate(nextProps, nextState, nextContext) {}
+
+    // synchronize state to props
+    UNSAFE_componentWillUpdate(nextProps, nextState) {}
 
     // cause side effects (AJAX calls etc.)
     componentDidUpdate(prevProps, prevState, snapshot) {}
@@ -108,5 +129,5 @@ React 17 will call `rootNode.addEventListener()` under the hood instead.
 
 ## Conclusion
 
-There wasn’t a big change between version 16.8 and version 17.0, was **zero new features**.
+**No New Features**, there wasn't a big change between version 16.8 and version 17.0.
 What we had in the React 17 major release as new features that will redefine how React applications are built.
