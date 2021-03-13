@@ -13,6 +13,7 @@ const Page = (): React.ReactElement => {
     const meta = {
         title: 'Mauro Reis Vieira',
         description: 'Mauro Reis Vieira',
+        url: '',
     };
     return (
         <>

@@ -12,6 +12,7 @@ const Uses = (): React.ReactElement => {
     const meta = {
         title: 'Uses | Mauro Reis Vieira',
         description: 'Uses | Mauro Reis Vieira',
+        url: 'uses/',
     };
 
     return (

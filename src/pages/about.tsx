@@ -13,6 +13,7 @@ const About = (): React.ReactElement => {
     const meta = {
         title: 'About Me | Mauro Reis Vieira',
         description: 'About Me | Mauro Reis Vieira',
+        url: 'about/',
     };
 
     const { profile, employment } = ABOUT;

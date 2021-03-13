@@ -14,6 +14,7 @@ const Curriculum = (): React.ReactElement => {
     const meta = {
         title: 'Curriculum | Mauro Reis Vieira',
         description: 'Curriculum | Mauro Reis Vieira',
+        url: 'curriculum/',
     };
 
     const {

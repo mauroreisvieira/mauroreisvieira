@@ -21,6 +21,7 @@ export const Blog: React.FC<BlogProps> = ({
     const meta = {
         title: 'Blog | Mauro Reis Vieira',
         description: 'Blog | Mauro Reis Vieira',
+        url: 'blog/',
     };
 
     return (

@@ -13,6 +13,7 @@ export interface Post {
 
 export interface Mdx extends Post {
     source: any;
+    url: string;
 };
 
 const postsDirectory = path.join(process.cwd(), 'posts');

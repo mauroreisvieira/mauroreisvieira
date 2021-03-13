@@ -29,7 +29,8 @@ interface DocProps {
 export const Slug: React.FC<DocProps> = ({
     postData,
 }: DocProps & React.PropsWithChildren<DocProps>): React.ReactElement => {
-    const { title, description, image, date, content, source } = postData;
+    const { title, description, image, date, content, source, url } = postData;
+
     const [time, setTime] = useState<number>();
     const [width, setWidth] = useState<number>(0);
 
@@ -77,6 +78,7 @@ export const Slug: React.FC<DocProps> = ({
                     title,
                     description,
                     image,
+                    url: `post/${url}`,
                 }}
             >
                 <div className="mb-16 text-center mx-auto">
@@ -118,6 +120,7 @@ export const getStaticProps = async ({
         props: {
             postData: {
                 source: mdxSource,
+                url: slug,
                 content,
                 ...rest,
             },
