@@ -12,11 +12,13 @@ interface Meta {
 }
 
 interface ThemeProps {
+    head?: React.ReactElement;
     meta: Meta;
     className?: string;
 }
 
 const Theme: React.FC<ThemeProps> = ({
+    head,
     meta,
     className,
     children,
@@ -50,6 +52,7 @@ const Theme: React.FC<ThemeProps> = ({
                 sizes="192x192"
                 href="https://mauroreisvieira.com/static/touch/chrome-touch-icon-192x192.png"
             />
+            {head}
         </Head>
         <div
             className={classNames(

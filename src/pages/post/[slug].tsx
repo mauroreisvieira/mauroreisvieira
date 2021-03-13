@@ -80,6 +80,18 @@ export const Slug: React.FC<DocProps> = ({
                     image,
                     url: `post/${url}`,
                 }}
+                head={
+                    <>
+                        <link
+                            rel="preconnect"
+                            href="https://fonts.gstatic.com"
+                        />
+                        <link
+                            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap"
+                            rel="stylesheet"
+                        />
+                    </>
+                }
             >
                 <div className="mb-16 text-center mx-auto">
                     <Healine className="mb-12">{title}</Healine>
