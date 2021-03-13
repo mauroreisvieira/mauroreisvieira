@@ -86,36 +86,37 @@ class Example extends React.Component {
     preserving scroll position during re-renders.
 </Alert>
 
-### React 17 Class Example
+### Component Lifecycle
 
 ```jsx
 class Example extends React.Component {
-    // set initial state
-    constructor() {}
-
-    // update state via this.setState
+    // Immediately before initial rendering.
+    // usage: update state via this.setState()
     UNSAFE_componentWillMount() {}
 
-    // sync state to props
+    // When component receive new props
+    // usage: sync state to props
     UNSAFE_componentWillReceiveProps(nextProps) {}
 
-    // use to increasing performance
+    // Before rendering, after receive new props or state (can return false to prevent rendering)
+    // usage: to increasing performance
     shouldComponentUpdate(nextProps, nextState, nextContext) {}
 
-    // synchronize state to props
+    // Before rendering, after receive new props or state (can return false to prevent rendering)
+    // usage: synchronize state to props
     UNSAFE_componentWillUpdate(nextProps, nextState) {}
 
-    // cause side effects (AJAX calls etc.)
+    // After component's updates are flushed DOM
+    // usage: AJAX calls
     componentDidUpdate(prevProps, prevState, snapshot) {}
 
-    // cause side effects (AJAX calls etc.)
+    // Immediately after initial rendering.
+    // usage: AJAX calls
     componentDidMount() {}
 
-    // remove listeners/timers created
+    // Immediately before removing from DOM
+    // usage: remove listeners/timers created
     componentWillUnmount() {}
-
-    // create elements that will be render in DOM.
-    render() {}
 }
 ```
 

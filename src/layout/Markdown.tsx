@@ -12,7 +12,7 @@ const Markdown: React.FC<MarkdownProps> = ({
     React.PropsWithChildren<MarkdownProps>): React.ReactElement => (
     <article
         className={classNames(
-            'prose prose-xl dark:prose-light mx-auto',
+            'prose lg:prose-xl dark:prose-light mx-auto',
             className
         )}
     >
