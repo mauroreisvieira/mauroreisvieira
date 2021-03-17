@@ -3,7 +3,7 @@
 
 @layer components {
     .prose a {
-        @apply text-brand hover:text-brand-light underline focus:outline-none;
+        @apply text-brand hover:text-brand-light no-underline shadow-border focus:outline-none;
     }
 
     .prose code {

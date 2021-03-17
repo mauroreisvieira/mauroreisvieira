@@ -84,6 +84,9 @@ module.exports = {
                     ],
                 },
             }),
+            boxShadow: {
+                border: 'inset 0 -2px 0 0 currentColor',
+            },
         },
     },
     variants: {

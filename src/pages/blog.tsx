@@ -39,7 +39,7 @@ export const Blog: React.FC<BlogProps> = ({
                                     {weekdayYearMonthDay(post.date)}
                                 </p>
                                 <Link href={`/post/${post.id}`} passHref>
-                                    <Anchor className="mb-4 text-3xl font-black cursor-pointer underline">
+                                    <Anchor className="mb-4 text-3xl font-black">
                                         {post.title}
                                     </Anchor>
                                 </Link>

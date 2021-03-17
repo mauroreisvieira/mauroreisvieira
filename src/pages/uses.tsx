@@ -125,6 +125,21 @@ const Uses = (): React.ReactElement => {
                             </p>
                         ))}
                     </div>
+                    <div>
+                        <p>
+                            Curious about other uses pages? Checkout this list:{' '}
+                            <Anchor
+                                href="https://github.com/wesbos/awesome-uses"
+                                rel="noopener noreferrer"
+                                className="font-medium"
+                                title="Awesome Uses"
+                                target="_blank"
+                            >
+                                wesbos/awesome-uses
+                            </Anchor>
+                            .
+                        </p>
+                    </div>
                 </div>
             </Theme>
         </>
