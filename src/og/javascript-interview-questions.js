@@ -8,7 +8,7 @@ export default () => (
             <JavascriptLogo />
         </Logo>
         <Card style={{ width: '70%', textAlign: 'center' }}>
-            <H1>What's new in JavaScript?</H1>
+            <H1>JavaScript Interview Questions</H1>
         </Card>
     </Board>
 );
