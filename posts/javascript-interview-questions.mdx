@@ -1,0 +1,217 @@
+---
+title: 'JavaScript Interview Questions'
+description: 'JavaScript the most popular language for web development, if you are looking for a Front-End Developer job, you may know some of that questions.'
+date: '2021-03-24'
+image: 'https://mauroreisvieira.com/static/og/javascript-interview-questions.png'
+---
+
+JavaScript the most popular language on the web, is fully natively supported by browse and nowadays is a very important tool for a front-end web developer.
+
+Tools like React, Vue, Angular are created on top of JavaScript, so if you are looking for a job as a Front End Developer you may know that is very important to have a clear understanding of what is Javascript.
+
+You don't be surprised if interviewer/recruiter do some question about Javascript, it's totally normal...
+
+So let's see some of that's questions...
+
+## What is DOM?
+
+**Answer:** When the browser tries to render a HTML document, it creates an object based on the HTML document called DOM (Document Object Mode).
+
+## What is a closure?
+
+**Answer:** A closure is a function having access to the parent scope, even after the parent function has closed.
+
+```js
+var foo = (function () {
+    var counter = 0;
+    return function () {
+        counter += 1;
+        return counter;
+    };
+})();
+
+foo();
+foo();
+foo();
+
+// the counter is now 3
+```
+
+## Event delegation
+
+**Answer:** JavaScript event listeners fire not only a single DOM element but all children's.
+
+```html
+<ul class="items">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+```
+
+```js
+const items = document.querySelector('.items');
+
+items.addEventListener('click', (evt) => {
+    console.log('Event', evt); // click in item inside list will fire that console.log
+});
+```
+
+## Event bubbling
+
+**Answer:** It's the opposite of delegation, events on an element will "bubble up" and also fire all parents.
+
+```html
+<div onclick="console.log('parent')">
+    <!-- click in child will fire parent -->
+    <p onclick="console.log('p')">Child</p>
+</div>
+```
+
+## "target" vs "currentTarget"
+
+**Answer:** `target` is the actual thing that was clicked and `currentTarget` is who you attach to the event listener.
+
+## Explain IIFE
+
+**Answer:** Immediately Invoked Function Expression, that's mean, I write that function and I run.
+
+```js
+(function foo() {
+    console.log('do something...');
+})();
+```
+
+## Explain "hoisting"?
+
+**Answer:** In simple words variable can be used before it has been declared, all variables `var` are declared at the top of any function scope.
+
+```js
+foo = 'Hey';
+console.log(foo); // outputs: 'Hey'
+var foo;
+```
+
+## Function.prototype.bind()
+
+**Answer:** creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+```js
+const module = {
+    age: 42,
+    getAge: function () {
+        return this.age;
+    },
+};
+
+const unboundGetAge = module.getAge;
+console.log(unboundGetAge()); // expected output: undefined
+
+const boundGetAge = unboundGetAge.bind(module);
+console.log(boundGetAge()); // expected output: 42
+```
+
+## const vs let
+
+Before the ES6 version of JavaScript, only the keyword `var` was used to declare variables.
+
+**Answer:** `const` & `let` are both block scoped but `const` cannot be updated or re-declared.
+
+## null vs undefined vs undeclared
+
+**Answer:** `undeclared` try to use an variable that was not declared, `undefined` is declared but doesn't have a value and `null` is a "nothing" value.
+
+```js
+const foo = bar + 1; // undeclared
+
+let baz; // undefined
+
+const qux = null; // null
+```
+
+## == vs ===
+
+**Answer:** `==` checks for equality and `===` checks for equality and type.
+
+```js
+console.log(1 == 1); //true
+console.log(1 == '1'); //true
+console.log(1 === '1'); //false
+```
+
+## map vs forEach
+
+**Answer:** `forEach()` executes a provided function once for each array element and `map()` creates a new array with the results of calling a provided function on every element in the calling array.
+
+**For Each**
+
+```js
+const arr = [1, 2, 3, 4, 5];
+arr.forEach((num, index) => {
+    return (arr[index] = num * 2);
+});
+
+console.log(arr); // [2, 4, 6, 8, 10]
+```
+
+**Map**
+
+```js
+const arr = [1, 2, 3, 4, 5];
+const doubled = arr.map((num) => {
+    return num * 2;
+});
+
+console.log(doubled); // [2, 4, 6, 8, 10]
+```
+
+## sync vs async
+
+**Answer:** Synchronous waits for each operation to complete, after that only it executes the next operation, Asynchronous never waits for each operation to complete, rather it executes all operations in the first GO only.
+
+```js
+// synchronous function
+function foo(arg) {
+    console.log(arg);
+}
+
+foo(1);
+
+// asynchronous function
+setTimeout(() => {
+    console.log(2);
+}, 0);
+
+foo(3);
+
+// print: 1, 3, 2.
+```
+
+## What is a Promise?
+
+**Answer:** A promise is an object which can be returned synchronously from an asynchronous function.
+
+```js
+const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
+wait(3000).then(() => console.log('Hello!')); // after 3s will print 'Hello!'
+```
+
+## Higher order function?
+
+**Answer:** is a function that takes a function as an argument, or returns a function, for example `map`, `filter`, `reduce`...
+
+```js
+const foo = [1, 2, 3];
+const bar = foo.map(function (item) {
+    return item * 2;
+});
+console.log(bar);
+```
+
+## Conclusion
+
+In my point of view, I don't care much if the developer knows the theory, but it is very important if he knows what to use and when to use it.
+
+Of course, if we are using a lot of tools like `React`, many of these things are non-transparent, but it is always good to understand what is done behind all of the magic.
