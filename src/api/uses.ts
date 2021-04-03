@@ -20,6 +20,11 @@ export const SETUP: Uses[] = [
         link: 'https://www.apple.com/shop/product/MJ2R2LL/A/magic-trackpad-2-silver',
         description: 'Recently I bought to tested and I love it.'
     },
+    {
+        name: 'Magic Keyboard ',
+        link: 'https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english',
+        description: 'Apple keyboard w/out number a number pad, to ease change between external keyboard and Mac keyboard.'
+    },
 ];
 
 export const DEVELOPMENT: Uses[] = [
@@ -98,6 +103,11 @@ export const PRODUCTIVITY: Uses[] = [
         name: 'Alfred',
         link: 'https://www.alfredapp.com/',
         description: 'For many years I used Spotlight to open applications, but I feel the need to have something that does more, such as opening web pages, executing commands...'
+    },
+    {
+        name: 'BetterSnapToo‪l‬',
+        link: 'https://folivora.ai/bettersnaptool',
+        description: 'Cool, since I use external monitor, that tool help me to manage window with simple shortcuts and gestures.'
     },
     {
         name: 'Google Drive',
