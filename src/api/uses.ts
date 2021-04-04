@@ -23,7 +23,7 @@ export const SETUP: Uses[] = [
     {
         name: 'Magic Keyboard ',
         link: 'https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english',
-        description: 'Apple keyboard w/out number a number pad, to ease change between external keyboard and Mac keyboard.'
+        description: 'Apple keyboard without a number pad, to ease change between external keyboard and Mac keyboard.'
     },
 ];
 
