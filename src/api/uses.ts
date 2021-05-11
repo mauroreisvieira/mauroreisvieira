@@ -11,6 +11,11 @@ export const SETUP: Uses[] = [
         description: '2,2 GHz Quad-Core Intel Core i7, 16 GB 1600 MHz DDR3, Intel Iris Pro 1536 MB'
     },
     {
+        name: 'Monitor Samsung 28"',
+        link: 'https://www.samsung.com/pt/monitors/high-resolution/uhd-monitor-28-inch-lu28r550uquxen/',
+        description: 'UR55 IPS 28" 4K UHD 16:9 60Hz FreeSync'
+    },
+    {
         name: 'Magic Mouse 2',
         link: 'https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2-silver',
         description: 'I love the gestures and precision you get with a real mouse.'
