@@ -6,9 +6,9 @@ interface Uses {
 
 export const SETUP: Uses[] = [
     {
-        name: '15" MacBook Pro (Retina, 15-inch, Mid 2015)',
+        name: 'MacBook Pro (16-inch, 2019)',
         link: 'https://support.apple.com/kb/sp719?locale=pt_PT',
-        description: '2,2 GHz Quad-Core Intel Core i7, 16 GB 1600 MHz DDR3, Intel Iris Pro 1536 MB'
+        description: '2,6 GHz 6-Core Intel Core i7, 16 GB 2667 MHz DDR4, Intel UHD Graphics 630 1536 MB'
     },
     {
         name: 'Monitor Samsung 28"',
