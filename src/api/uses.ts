@@ -59,6 +59,11 @@ export const DEVELOPMENT: Uses[] = [
         description: 'Powerful and extremely customizable ZSH prompt.'
     },
     {
+        name: 'Fig',
+        link: 'https://fig.io/',
+        description: 'Amazing autocomplete for terminal.'
+    },
+    {
         name: 'Sequel Pro',
         link: 'https://www.sequelpro.com/',
         description: 'For all my MySQL stuff.'
