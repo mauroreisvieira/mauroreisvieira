@@ -1,0 +1,128 @@
+---
+title: 'Importance of keys in React'
+description: 'Keys help React identify which items have changed, they should be given to the elements inside the array to give the elements a identity'
+date: '2021-06-16'
+image: 'https://mauroreisvieira.com/static/og/importance-of-keys-in-react.png'
+---
+
+Keys help React identify which items have changed, they should be given to the elements inside the array to give the elements a identity.
+
+A `key` is a special string attribute you need to include when creating lists of elements.
+
+React uses the key to match children in the original tree with children in the subsequent tree.
+
+```jsx
+[1, 2, 3, 4, 5].map((number) => (
+    <li key={number.toString()}>{number}</li>
+);
+```
+
+So, looking to that example, our first thought is that everything is fine, _(at least we have no errors on the console)_ and in fact is totally fine, **if the order of items never change**.
+
+For other words, if you are working with a list that order of items may change and if you use the item index as a key this can negatively impact performance and may cause issues with component state.
+
+To get a better understanding of what I mean, let's implement a demo with 3 different approaches will a list that will be changed.
+
+```jsx
+const App = () => {
+    const ORDER = {
+        DESC: 'desc',
+        ASC: 'asc',
+    };
+
+    const [order, setOrder] = React.useState(ORDER.DESC);
+    const [items, setItems] = React.useState([
+        { id: 'POR', name: 'Portugal', population: 10000000 },
+        { id: 'GER', name: 'Germany', population: 83000000 },
+        { id: 'ITA', name: 'Italy', population: 60000000 },
+        { id: 'FRA', name: 'France', population: 67000000 },
+    ]);
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            if (order === ORDER.ASC) {
+                setItems(
+                    items.sort(
+                        (a, b) =>
+                            parseFloat(a.population) - parseFloat(b.population)
+                    )
+                );
+                setOrder(ORDER.DESC);
+            } else {
+                setItems(
+                    items.sort(
+                        (a, b) =>
+                            parseFloat(b.population) - parseFloat(a.population)
+                    )
+                );
+                setOrder(ORDER.ASC);
+            }
+        }, 3000);
+        return () => clearInterval(timer);
+    }, [order]);
+
+    return (
+        <>
+            {/* No Key */}
+
+            {/* Index key */}
+
+            {/* ID key */}
+        </>
+    );
+};
+```
+
+### No key
+
+```jsx
+<div>
+    {items.map((item) => (
+        <input value={item.name} />
+    ))}
+</div>
+```
+
+That example we get `Warning: Each child in a list should have a unique "key" prop`.
+
+### Index key
+
+```jsx
+<div>
+    {items.map((item, index) => (
+        <input key={index} value={item.name} />
+    ))}
+</div>
+```
+
+That we don't see any warning in console, but let's compare that approach with the next example.
+
+### ID key
+
+```jsx
+<div>
+    {items.map((item, index) => (
+        <input key={item.id} value={item.name} />
+    ))}
+</div>
+```
+
+### What is the difference?
+
+In the first example you get the idea, it's required to set a key, but and the second and third examples, what is the problem?
+
+Analyzing the code, we have a list with countries that will be reorder every 3000ms (ascending and descending), based of population.
+
+Any time that we reorder component instances are updated and reused based on their key, if the key is an index, moving an item changes it.
+As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
+
+<Alert skin="warning">
+    Keys should be stable, predictable, and unique.
+    Unstable keys will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+</Alert>
+
+<img src="/blog/importance-of-keys-in-react.gif" />
+
+Here is [an demo of reorder list with 3 approach above](https://codepen.io/mauroreisvieira/pen/LYWqjNx) on CodePen.
+
+_To reproduce the issue described above, open the demo, and focus on first input of each section and wait for the reorder._
