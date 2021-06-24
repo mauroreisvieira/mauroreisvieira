@@ -16,6 +16,11 @@ export const SETUP: Uses[] = [
         description: 'UR55 IPS 28" 4K UHD 16:9 60Hz FreeSync'
     },
     {
+        name: 'iPad',
+        link: 'https://www.apple.com/shop/buy-ipad/ipad-10-2',
+        description: 'A12 Bionic, 3GB/ 128GB'
+    },
+    {
         name: 'Magic Mouse 2',
         link: 'https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2-silver',
         description: 'I love the gestures and precision you get with a real mouse.'
@@ -34,7 +39,7 @@ export const SETUP: Uses[] = [
 
 export const DEVELOPMENT: Uses[] = [
     {
-        name: 'Sublime Text 3',
+        name: 'Sublime Text 4',
         link: 'https://www.sublimetext.com/',
         description: 'Most productive text editing.'
     },
